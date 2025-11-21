@@ -1,0 +1,48 @@
+name: Continuous Deployment
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy a producció
+        run: |
+          echo "Deployant..."
+
+      - name: Notificar a Discord
+        if: always()
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          STATUS="✅ Desplegament correcte"
+          COLOR=3066993
+          if [ "${{ job.status }}" != "success" ]; then
+            STATUS="❌ Error en el desplegament"
+            COLOR=15158332
+          fi
+
+          PAYLOAD=$(jq -n \
+            --arg content "" \
+            --argjson embeds "[{
+              \"title\": \"$STATUS\",
+              \"color\": $COLOR,
+              \"fields\": [
+                {\"name\": \"Repository\", \"value\": \"${{ github.repository }}\", \"inline\": true},
+                {\"name\": \"Branch\", \"value\": \"${{ github.ref_name }}\", \"inline\": true},
+                {\"name\": \"Author\", \"value\": \"${{ github.actor }}\", \"inline\": true},
+                {\"name\": \"Commit\", \"value\": \"[${{ github.sha }}](https://github.com/${{ github.repository }}/commit/${{ github.sha }})\", \"inline\": false},
+                {\"name\": \"Workflow\", \"value\": \"${{ github.workflow }}\", \"inline\": false}
+              ],
+              \"footer\": {\"text\": \"GitHub Actions • $(date '+%Y-%m-%d %H:%M:%S')\"}
+            }]" \
+            '{content: $content, embeds: $embeds}' )
+
+          curl -X POST -H "Content-Type: application/json" \
+            -d "$PAYLOAD" \
+            "$DISCORD_WEBHOOK_URL"
