@@ -1,0 +1,74 @@
+---
+import { navigate } from "astro:transitions/client";
+import { Footer } from "../components/Footer";
+import Navbar from "../components/Navbar";
+import { PostCard } from "../components/PostCard";
+import { PostsService } from "../services/PostsService";
+import type { Post } from "../types/post";
+
+let posts: Post[] = [];
+let error = "";
+
+try {
+  posts = await PostsService.getPosts();
+} catch (e) {
+  error = e instanceof Error ? e.message : "Failed to fetch posts";
+}
+---
+
+<Navbar />
+
+<div class="w-full min-h-screen bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="text-center mb-16">
+      <h1 class="text-5xl font-bold text-gray-900 mb-4">Latest Posts</h1>
+      <p class="text-xl text-gray-600">
+        Explore our latest articles and insights
+      </p>
+    </div>
+
+    {
+      error && (
+        <div class="text-center p-4 mb-8 bg-red-50 text-red-600 rounded-lg">
+          {error}
+        </div>
+      )
+    }
+
+    {
+      !error && posts.length === 0 && (
+        <div class="text-center p-4 mb-8">
+          <div class="animate-pulse">
+            <div class="h-4 bg-gray-200 rounded w-3/4 mx-auto mb-4" />
+            <div class="h-4 bg-gray-200 rounded w-1/2 mx-auto" />
+          </div>
+        </div>
+      )
+    }
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        posts
+          .sort(
+            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+          )
+          .map((post) => (
+            <PostCard
+              {...post}
+              date={new Date(post.date).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+              onReadMore={(id) => {
+                // You can add navigation logic here
+                console.log(`Navigate to post ${id}`);
+              }}
+            />
+          ))
+      }
+    </div>
+  </div>
+</div>
+
+<Footer client:load />
