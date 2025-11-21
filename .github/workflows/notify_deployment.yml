@@ -20,10 +20,10 @@ jobs:
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
-          STATUS="✅ Desplegament correcte"
+          STATUS="✅ -> Desplegament correcte"
           COLOR=3066993
           if [ "${{ job.status }}" != "success" ]; then
-            STATUS="❌ Error en el desplegament"
+            STATUS="❌ -> Error en el desplegament"
             COLOR=15158332
           fi
 
