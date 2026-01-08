@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre nosotros",
+    "team": "Equipo",
+    "sponsors": "Patrocinadores",
+    "news": "Noticias",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "UDG RACING",
+    "subtitle": "DIVISION",
+    "description": "Por Scratch. Ingeniería y velocidad desde la Universidad de Girona.",
+    "discoverMore": "Descubre más",
+    "meetTeam": "Conoce el equipo"
+  },
+  "about": {
+    "title": "QUIÉNES SOMOS",
+    "heading": "UDG Racing Division es el equipo de competición de la Universidad de Girona dedicado a la innovación en motorsport eléctrico.",
+    "paragraph1": "Somos un equipo multidisciplinario de estudiantes y profesionales unidos por la pasión por la ingeniería y la velocidad. Cada temporada es un reto nuevo para superar límites técnicos y mejorar nuestro rendimiento en pista.",
+    "paragraph2": "Diseñamos, construimos y competimos con vehículos eléctricos de carreras que combinan rendimiento, eficiencia y sostenibilidad. Nuestro objetivo es formar la próxima generación de ingenieros del motorsport mientras empujamos los límites de la tecnología.",
+    "paragraph3": "Trabajamos en ingeniería mecánica, electrónica, aerodinámica, diseño y gestión de proyectos. Cada miembro aporta sus habilidades únicas para crear un vehículo competitivo que representa la excelencia de la UdG.",
+    "ctaButton": "Conoce el equipo",
+    "yearsLabel": "Años",
+    "membersLabel": "Miembros"
+  },
+  "stats": {
+    "title": "RENDIMIENTO"
+  },
+  "team": {
+    "title": "EL EQUIPO",
+    "description": "Somos un equipo multidisciplinario de estudiantes y profesionales unidos por la pasión por la ingeniería y la velocidad. Cada temporada es un reto nuevo para superar límites técnicos y mejorar nuestro rendimiento en pista.",
+    "current": "Equipo actual",
+    "alumni": "Antiguos miembros"
+  },
+  "sponsors": {
+    "title": "SPONSORS",
+    "description": "Gracias a nuestros patrocinadores que hacen posible el proyecto",
+    "collaborate": "¿Quieres colaborar con nosotros?",
+    "contact": "Contáctanos"
+  },
+  "news": {
+    "title": "NOTICIAS",
+    "description": "Mantente al día con nuestras últimas novedades y éxitos",
+    "readMore": "Leer más",
+    "loadMore": "Ver más noticias"
+  },
+  "footer": {
+    "description": "Equipo de competición de la Universidad de Girona dedicado a la innovación en motorsport eléctrico.",
+    "navigation": "Navegación",
+    "links": "Enlaces",
+    "quickLinks": {
+      "team": "El Equipo",
+      "news": "Noticias",
+      "sponsors": "Patrocinadores",
+      "about": "Quiénes somos",
+      "stats": "Rendimiento"
+    },
+    "externalLinks": {
+      "udgWeb": "Web UdG",
+      "formulaStudent": "Formula Student",
+      "contact": "Contacto"
+    },
+    "sections": {
+      "navigation": "Navegación",
+      "external": "Enlaces externos",
+      "contact": "Contacto"
+    },
+    "address": "Campus Montilivi",
+    "city": "17003 Girona",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "copyright": "© 2025 UdG Racing Division. Todos los derechos reservados."
+  },
+  "contact": {
+    "title": "Contacto",
+    "name": "Nombre",
+    "email": "Email",
+    "subject": "Asunto",
+    "message": "Mensaje",
+    "send": "Enviar mensaje",
+    "sending": "Enviando...",
+    "success": "¡Mensaje enviado correctamente!",
+    "error": "Error al enviar el mensaje. Inténtalo de nuevo."
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "tryAgain": "Inténtalo de nuevo",
+    "close": "Cerrar"
+  }
+}
