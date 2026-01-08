@@ -1,0 +1,140 @@
+import React, { useRef } from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { ExternalLink } from 'lucide-react';
+import { TiltCard } from './TiltCard';
+import { AnimatedCounter } from './AnimatedCounter';
+export function StatsSection() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    margin: '-100px'
+  });
+  const stats = [{
+    value: '50',
+    unit: 'KM',
+    label: 'Autonomia',
+    link: '#',
+    isExternal: false
+  }, {
+    value: '1:21',
+    unit: 'MIN',
+    label: 'Millor temps',
+    link: '#',
+    isExternal: true
+  }, {
+    value: '800',
+    unit: 'KG',
+    label: 'Pes total',
+    link: '#',
+    isExternal: false
+  }, {
+    value: '100',
+    unit: 'KW',
+    label: 'Potència',
+    link: '#',
+    isExternal: true
+  }];
+  return <section id="stats" ref={ref} className="py-24 bg-gradient-to-b from-black to-zinc-900 relative overflow-hidden">
+      {/* Animated background elements */}
+      <motion.div className="absolute inset-0 opacity-5" animate={{
+      backgroundPosition: ['0% 0%', '100% 100%']
+    }} transition={{
+      duration: 20,
+      repeat: Infinity,
+      repeatType: 'reverse'
+    }} style={{
+      backgroundImage: 'radial-gradient(circle, var(--color-udg-blue) 1px, transparent 1px)',
+      backgroundSize: '50px 50px'
+    }} />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <motion.div initial={{
+        opacity: 0,
+        y: 30
+      }} animate={isInView ? {
+        opacity: 1,
+        y: 0
+      } : {}} transition={{
+        duration: 0.6
+      }} className="text-center mb-16">
+          <motion.h2 className="font-racing text-4xl sm:text-5xl md:text-6xl text-white mb-4" initial={{
+          opacity: 0,
+          scale: 0.9
+        }} animate={isInView ? {
+          opacity: 1,
+          scale: 1
+        } : {}} transition={{
+          duration: 0.8,
+          delay: 0.2
+        }}>
+            RENDIMENT
+          </motion.h2>
+          <motion.div className="w-24 h-1 bg-gradient-blue mx-auto" initial={{
+          scaleX: 0
+        }} animate={isInView ? {
+          scaleX: 1
+        } : {}} transition={{
+          duration: 0.8,
+          delay: 0.4
+        }} />
+        </motion.div>
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          {stats.map((stat, index) => <motion.div key={stat.label} initial={{
+          opacity: 0,
+          y: 50
+        }} animate={isInView ? {
+          opacity: 1,
+          y: 0
+        } : {}} transition={{
+          duration: 0.6,
+          delay: index * 0.1,
+          type: 'spring',
+          stiffness: 100
+        }}>
+              <TiltCard>
+                <motion.a href={stat.link} target={stat.isExternal ? '_blank' : '_self'} rel={stat.isExternal ? 'noopener noreferrer' : undefined} className="relative group cursor-pointer block" whileHover={{
+              y: -5
+            }} transition={{
+              type: 'spring',
+              stiffness: 300
+            }}>
+                  <div className="bg-zinc-800/50 border-2 border-zinc-700 p-8 text-center group-hover:border-[var(--color-udg-blue)] transition-colors duration-300 relative overflow-hidden">
+                    {/* Animated background on hover */}
+                    <motion.div className="absolute inset-0 bg-gradient-to-br from-[var(--color-udg-blue)]/10 to-transparent opacity-0 group-hover:opacity-100" transition={{
+                  duration: 0.3
+                }} />
+
+                    <div className="relative z-10">
+                      <div className="font-racing text-5xl sm:text-6xl text-white mb-2">
+                        <AnimatedCounter value={stat.value} />
+                      </div>
+                      <motion.div className="text-[var(--color-udg-blue)] font-bold text-xl mb-2 flex items-center justify-center gap-2" whileHover={{
+                    scale: 1.1
+                  }}>
+                        {stat.unit}
+                        {stat.isExternal && <ExternalLink size={16} className="opacity-50" />}
+                      </motion.div>
+                      <div className="text-gray-400 uppercase tracking-wide text-sm">
+                        {stat.label}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Animated corner accent */}
+                  <motion.div className="absolute top-0 right-0 w-4 h-4 bg-[var(--color-udg-blue)]" initial={{
+                scale: 0
+              }} whileHover={{
+                scale: 1
+              }} transition={{
+                type: 'spring',
+                stiffness: 300
+              }} />
+                </motion.a>
+              </TiltCard>
+            </motion.div>)}
+        </div>
+      </div>
+    </section>;
+}

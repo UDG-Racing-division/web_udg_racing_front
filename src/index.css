@@ -1,0 +1,217 @@
+/* URL IMPORTS (SUCH AS FONT IMPORTS) SHOULD BE KEPT ABOVE TAILWIND IMPORTS - DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* PLEASE NOTE: THESE TAILWIND IMPORTS SHOULD NEVER BE DELETED - DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+/* DO NOT DELETE THESE TAILWIND IMPORTS, OTHERWISE THE STYLING WILL NOT RENDER AT ALL - DO NOT DELETE THIS COMMENT */
+
+:root {
+  /* UDG Racing Brand Colors - Extracted from logo */
+  --color-udg-blue: #2d4a8e;
+  --color-udg-blue-light: #3d5ba8;
+  --color-udg-blue-dark: #1d3a7e;
+  --color-udg-blue-darker: #0d2a6e;
+  
+  /* Accent colors */
+  --color-accent-cyan: #00d4ff;
+  --color-accent-blue-bright: #4a90ff;
+  --color-accent-electric: #00ffff;
+  
+  /* Neutral colors */
+  --color-white: #ffffff;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-black: #000000;
+  
+  /* Semantic colors */
+  --color-primary: var(--color-udg-blue);
+  --color-primary-light: var(--color-udg-blue-light);
+  --color-primary-dark: var(--color-udg-blue-dark);
+  
+  /* Text colors */
+  --color-text: #ffffff;
+  --color-text-muted: #9ca3af;
+  --color-text-secondary: #6b7280;
+  
+  /* Background colors */
+  --color-bg-primary: #000000;
+  --color-bg-secondary: #0a0a0a;
+  --color-bg-tertiary: #1a1a1a;
+  --color-bg-card: #111111;
+  --color-bg-blue-dark: #0d1829;
+  
+  /* Border colors */
+  --color-border: #1f2937;
+  --color-border-light: #374151;
+  --color-border-blue: rgba(45, 74, 142, 0.3);
+  
+  /* Typography */
+  --font-racing: 'Racing Sans One', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  --shadow-glow-blue: 0 0 30px rgba(45, 74, 142, 0.4);
+  --shadow-glow-cyan: 0 0 30px rgba(0, 212, 255, 0.3);
+  
+  /* Gradients */
+  --gradient-blue: linear-gradient(135deg, var(--color-udg-blue-dark) 0%, var(--color-udg-blue) 50%, var(--color-udg-blue-light) 100%);
+  --gradient-blue-radial: radial-gradient(circle at center, var(--color-udg-blue) 0%, var(--color-udg-blue-darker) 100%);
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-racing {
+  font-family: var(--font-racing);
+  letter-spacing: 0.02em;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar - UDG Blue */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-udg-blue);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-udg-blue-light);
+}
+
+/* Selection - UDG Blue */
+::selection {
+  background-color: var(--color-udg-blue);
+  color: var(--color-white);
+}
+
+::-moz-selection {
+  background-color: var(--color-udg-blue);
+  color: var(--color-white);
+}
+
+/* Focus visible for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-udg-blue);
+  outline-offset: 2px;
+}
+
+/* Utility classes */
+.text-gradient-blue {
+  background: linear-gradient(135deg, var(--color-udg-blue) 0%, var(--color-accent-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gradient-blue {
+  background: var(--gradient-blue);
+}
+
+.border-gradient-blue {
+  border-image: linear-gradient(135deg, var(--color-udg-blue) 0%, var(--color-udg-blue-light) 100%) 1;
+}
+
+.glow-blue {
+  box-shadow: var(--shadow-glow-blue);
+}
+
+.glow-cyan {
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+/* Animation utilities */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(45, 74, 142, 0.2) 50%,
+    transparent 100%
+  );
+  background-size: 1000px 100%;
+}
+
+@keyframes pulse-blue {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-pulse-blue {
+  animation: pulse-blue 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Racing stripes effect */
+.racing-stripes {
+  position: relative;
+  overflow: hidden;
+}
+
+.racing-stripes::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(45, 74, 142, 0.1) 10px,
+    rgba(45, 74, 142, 0.1) 20px
+  );
+  animation: racing-stripes-move 20s linear infinite;
+}
+
+@keyframes racing-stripes-move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}

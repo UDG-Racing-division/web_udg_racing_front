@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+
+// Importar componentes React
+import { Navigation } from '../../components/Navigation';
+import { Hero } from '../../components/Hero';
+import { StatsSection } from '../../components/StatsSection';
+import { AboutSection } from '../../components/AboutSection';
+import { TeamSection } from '../../components/TeamSection';
+import { NewsSection } from '../../components/NewsSection';
+import { SponsorCarousel } from '../../components/SponsorCarousel';
+import { Footer } from '../../components/Footer';
+---
+
+<Layout>
+  <div class="w-full min-h-screen bg-black">
+    <Navigation client:load />
+    <Hero client:load />
+    <StatsSection client:load />
+    <AboutSection client:load />
+    <TeamSection client:load />
+    <NewsSection client:load />
+    <SponsorCarousel client:load />
+    <Footer client:load />
+  </div>
+</Layout>
