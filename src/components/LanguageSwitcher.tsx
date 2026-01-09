@@ -4,9 +4,9 @@ import { useLanguage, type Language } from "../contexts/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
 
 const languages: { code: Language; name: string; flag: string }[] = [
-  { code: "ca", name: "Català", flag: "🏴" },
-  { code: "es", name: "Español", flag: "🇪🇸" },
-  { code: "en", name: "English", flag: "🇬🇧" },
+  { code: "ca", name: "Català", flag: "cat" },
+  { code: "es", name: "Español", flag: "es" },
+  { code: "en", name: "English", flag: "en" },
 ];
 
 export function LanguageSwitcher() {

@@ -295,7 +295,7 @@ export function AboutSection({ settings }: AboutSectionProps) {
               <div className="flex items-center gap-6">
                 <div>
                   <div className="font-racing text-4xl text-[var(--color-udg-blue)]">
-                    10+
+                    2+
                   </div>
                   <div className="text-gray-400 text-sm uppercase tracking-wide">
                     {t("about.yearsLabel")}
@@ -304,7 +304,7 @@ export function AboutSection({ settings }: AboutSectionProps) {
                 <div className="w-px h-12 bg-zinc-700" />
                 <div>
                   <div className="font-racing text-4xl text-[var(--color-udg-blue)]">
-                    50+
+                    100+
                   </div>
                   <div className="text-gray-400 text-sm uppercase tracking-wide">
                     {t("about.membersLabel")}
