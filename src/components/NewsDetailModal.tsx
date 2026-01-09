@@ -13,6 +13,10 @@ export function NewsDetailModal({ news, onClose }: NewsDetailModalProps) {
   const { translate } = useLanguage();
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
 
+  React.useEffect(() => {
+    setCurrentImageIndex(0);
+  }, [news?.id]);
+
   if (!news) return null;
 
   const allImages = [

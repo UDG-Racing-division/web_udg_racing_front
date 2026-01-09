@@ -100,13 +100,25 @@ export function NewsSection({ news }: NewsSectionProps) {
               [start, end - 0.1, end],
               ["0%", "0%", "-100%"]
             );
+
+            const handleClick = () => {
+              setSelectedNews(item);
+            };
+
+            const pointerEvents = useTransform(
+              scrollYProgress,
+              [start, start + 0.05, end - 0.05, end],
+              ["none", "auto", "auto", "none"]
+            );
+
             return (
               <motion.div
-                key={index}
+                key={item.id}
                 style={{
                   opacity,
                   scale,
                   x,
+                  pointerEvents,
                 }}
                 className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 lg:px-16"
               >
@@ -115,7 +127,7 @@ export function NewsSection({ news }: NewsSectionProps) {
                   index={index}
                   translate={translate}
                   t={t}
-                  onClick={() => setSelectedNews(item)}
+                  onClick={handleClick}
                 />
               </motion.div>
             );
@@ -255,9 +267,8 @@ function HorizontalNewsCard({
         </p>
 
         {/* Read more link */}
-        <motion.a
-          href="#"
-          className="inline-flex items-center gap-3 text-white font-bold text-lg group"
+        <motion.span
+          className="inline-flex items-center gap-3 text-white font-bold text-lg group cursor-pointer"
           whileHover={{
             x: 10,
           }}
@@ -280,7 +291,7 @@ function HorizontalNewsCard({
           >
             <ArrowRight size={20} className="text-[var(--color-udg-blue)]" />
           </motion.div>
-        </motion.a>
+        </motion.span>
 
         {/* Number indicator */}
         <div className="pt-8 border-t border-zinc-800">
