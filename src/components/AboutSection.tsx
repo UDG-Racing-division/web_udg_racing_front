@@ -220,7 +220,7 @@ export function AboutSection({ settings }: AboutSectionProps) {
           >
             <div className="relative aspect-[4/5] overflow-hidden">
               <motion.img
-                src="/inicio2.jpg"
+                src="/inicio1.jpg"
                 alt="UDG Racing Team"
                 className="w-full h-full object-cover"
                 whileHover={{
