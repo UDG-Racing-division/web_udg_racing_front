@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { ContactModal } from "./ContactModal";
+
 export function Navigation() {
   const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);

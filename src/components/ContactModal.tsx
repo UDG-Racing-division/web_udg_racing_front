@@ -10,11 +10,15 @@ interface ContactModalProps {
 
 export function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const { t } = useLanguage();
+  const [activeTab, setActiveTab] = useState<"participate" | "sponsor">(
+    "participate"
+  );
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
+    type: "participate",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<
@@ -33,12 +37,18 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, type: activeTab }),
       });
 
       if (response.ok) {
         setSubmitStatus("success");
-        setFormData({ name: "", email: "", subject: "", message: "" });
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+          type: "participate",
+        });
         setTimeout(() => {
           onClose();
           setSubmitStatus("idle");
@@ -62,7 +72,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm overflow-y-auto"
         onClick={onClose}
       >
         <motion.div
@@ -70,13 +80,13 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
           transition={{ type: "spring", damping: 25 }}
-          className="relative w-full max-w-2xl bg-[var(--color-bg-card)] rounded-lg shadow-2xl p-8"
+          className="relative w-full max-w-2xl bg-[var(--color-bg-card)] rounded-lg shadow-2xl p-8 my-8"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 bg-black/50 hover:bg-black/70 rounded-full transition-colors"
+            className="absolute top-4 right-4 p-2 bg-black/50 hover:bg-black/70 rounded-full transition-colors z-10"
           >
             <X size={24} className="text-white" />
           </button>
@@ -84,6 +94,44 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
           <h2 className="font-racing text-3xl text-white mb-6">
             {t("contact.title")}
           </h2>
+
+          {/* Custom Segmented Control */}
+          <div className="relative flex p-1 bg-zinc-900/50 rounded-xl border border-white/10 mb-8 backdrop-blur-sm">
+            <button
+              onClick={() => setActiveTab("participate")}
+              className={`flex-1 relative z-10 py-3 text-sm sm:text-base font-bold uppercase tracking-wide transition-colors duration-200 ${
+                activeTab === "participate" ? "text-white" : "text-gray-400 hover:text-white"
+              }`}
+            >
+              {t("contact.participate")}
+            </button>
+            <button
+              onClick={() => setActiveTab("sponsor")}
+              className={`flex-1 relative z-10 py-3 text-sm sm:text-base font-bold uppercase tracking-wide transition-colors duration-200 ${
+                activeTab === "sponsor" ? "text-white" : "text-gray-400 hover:text-white"
+              }`}
+            >
+              {t("contact.sponsor")}
+            </button>
+            
+            {/* Animated Background */}
+            <div className="absolute inset-1 pointer-events-none">
+              <motion.div
+                layoutId="activeTabBackground"
+                className="h-full bg-[var(--color-udg-blue)] rounded-lg shadow-lg"
+                initial={false}
+                animate={{
+                  x: activeTab === "participate" ? "0%" : "100%",
+                }}
+                style={{ width: "50%" }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 30
+                }}
+              />
+            </div>
+          </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
@@ -102,6 +150,9 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   setFormData({ ...formData, name: e.target.value })
                 }
                 className="w-full px-4 py-3 bg-[var(--color-bg-tertiary)] border border-[var(--color-border)] rounded-lg text-white focus:outline-none focus:border-[var(--color-udg-blue)] transition-colors"
+                placeholder={
+                  activeTab === "sponsor" ? "Company / Organization" : ""
+                }
               />
             </div>
 

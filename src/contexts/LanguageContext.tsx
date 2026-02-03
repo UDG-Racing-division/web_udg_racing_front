@@ -17,6 +17,7 @@ interface LanguageContextType {
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
   translate: (value: any) => string;
+  getData: (key: string) => any;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
@@ -63,6 +64,21 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
     return typeof value === "string" ? value : key;
   };
 
+  const getData = (key: string): any => {
+    const keys = key.split(".");
+    let value: any = translations[language];
+
+    for (const k of keys) {
+      if (value && typeof value === "object") {
+        value = value[k];
+      } else {
+        return null; // Return null if not found
+      }
+    }
+
+    return value;
+  };
+
   const translate = (value: any): string => {
     if (!value) return "";
     if (typeof value === "string") return value;
@@ -78,7 +94,7 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   }, [language]);
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t, translate }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, translate, getData }}>
       {children}
     </LanguageContext.Provider>
   );

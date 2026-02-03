@@ -74,6 +74,8 @@
   },
   "contact": {
     "title": "Contacto",
+    "participate": "Participar",
+    "sponsor": "Patrocinar",
     "name": "Nombre",
     "email": "Email",
     "subject": "Asunto",
@@ -82,6 +84,24 @@
     "sending": "Enviando...",
     "success": "¡Mensaje enviado correctamente!",
     "error": "Error al enviar el mensaje. Inténtalo de nuevo."
+  },
+  "faq": {
+    "title": "PREGUNTAS FRECUENTES",
+    "description": "Todo lo que necesitas saber sobre UdG Racing Team",
+    "questions": [
+      {
+        "question": "¿Quién puede formar parte del equipo?",
+        "answer": "Cualquier estudiante de la UdG motivado puede unirse. Buscamos perfiles de ingeniería, economía, comunicación y más."
+      },
+      {
+        "question": "¿Cómo puedo patrocinar al equipo?",
+        "answer": "Contacta con nosotros a través del formulario o enviando un correo a racing@udg.edu. Ofrecemos diferentes niveles de patrocinio."
+      },
+      {
+        "question": "¿En qué competiciones participáis?",
+        "answer": "Participamos principalmente en la Formula Student, compitiendo en varios circuitos internacionales."
+      }
+    ]
   },
   "common": {
     "loading": "Cargando...",

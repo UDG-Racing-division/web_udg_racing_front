@@ -11,6 +11,7 @@ import { useLanguage } from "../contexts/LanguageContext";
 import { apiService } from "../services/api";
 import type { HomeData } from "../types/api";
 import { LoadingScreen } from "../components/LoadingScreen";
+import { FAQSection } from "../components/FAQSection";
 
 export function HomePage() {
   const { language, t } = useLanguage();
@@ -40,11 +41,12 @@ export function HomePage() {
         <div className="w-full min-h-screen bg-black">
           <Navigation />
           <Hero settings={data?.settings} />
-          <StatsSection stats={data?.stats || []} />
           <AboutSection settings={data?.settings} />
+          <StatsSection stats={data?.stats || []} />
           <TeamSection settings={data?.settings} />
-          <NewsSection news={data?.news || []} />
           <SponsorCarousel sponsors={data?.sponsors || []} />
+          <NewsSection news={data?.news || []} />
+          <FAQSection />
           <Footer settings={data?.settings} />
         </div>
       )}

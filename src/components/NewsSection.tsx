@@ -133,46 +133,6 @@ export function NewsSection({ news }: NewsSectionProps) {
             );
           })}
         </div>
-
-        {/* View more button - appears at the end */}
-        <motion.div
-          style={{
-            opacity: useTransform(scrollYProgress, [0.9, 1], [0, 1]),
-          }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20"
-        >
-          <motion.button
-            className="group relative px-10 py-5 bg-transparent border-2 border-[var(--color-udg-blue)] text-white font-bold text-lg uppercase tracking-wider overflow-hidden"
-            whileHover={{
-              scale: 1.05,
-            }}
-            whileTap={{
-              scale: 0.95,
-            }}
-          >
-            <motion.div
-              className="absolute inset-0 bg-[var(--color-udg-blue)]"
-              initial={{
-                scaleX: 0,
-              }}
-              whileHover={{
-                scaleX: 1,
-              }}
-              transition={{
-                duration: 0.4,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              style={{
-                transformOrigin: "left",
-              }}
-            />
-
-            <span className="relative z-10 flex items-center gap-3">
-              {t("news.loadMore")}
-              <ArrowRight size={20} />
-            </span>
-          </motion.button>
-        </motion.div>
       </div>
 
       {/* News Detail Modal */}

@@ -13,10 +13,10 @@ export default {
       },
       colors: {
         'udg-blue': {
-          DEFAULT: '#2d4a8e',
-          light: '#3d5ba8',
-          dark: '#1d3a7e',
-          darker: '#0d2a6e',
+          DEFAULT: '#001489',
+          light: '#1a3db0',
+          dark: '#000e60',
+          darker: '#000740',
         },
         'accent-cyan': '#00d4ff',
         'accent-blue-bright': '#4a90ff',
