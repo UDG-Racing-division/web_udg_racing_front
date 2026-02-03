@@ -44,8 +44,8 @@ export function HomePage() {
           <AboutSection settings={data?.settings} />
           <StatsSection stats={data?.stats || []} />
           <TeamSection settings={data?.settings} />
-          <SponsorCarousel sponsors={data?.sponsors || []} />
           <NewsSection news={data?.news || []} />
+          <SponsorCarousel sponsors={data?.sponsors || []} />
           <FAQSection />
           <Footer settings={data?.settings} />
         </div>
