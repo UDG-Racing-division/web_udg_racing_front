@@ -84,7 +84,7 @@ export function Footer({ settings }: FooterProps) {
     },
     {
       label: t("footer.externalLinks.contact"),
-      href: "mailto:info@udgracingdivision.com",
+      href: "mailto:info@udgracingdivision.cat",
       external: false,
     },
   ];
@@ -349,7 +349,7 @@ export function Footer({ settings }: FooterProps) {
               <div className="flex items-center gap-2 text-gray-400">
                 <Mail size={16} className="flex-shrink-0" />
                 <motion.a
-                  href="mailto:info@udgracingdivision.com"
+                  href="mailto:info@udgracingdivision.cat"
                   whileHover={{
                     x: 3,
                   }}
@@ -359,7 +359,7 @@ export function Footer({ settings }: FooterProps) {
                   }}
                   className="hover:text-[var(--color-racing-red)] transition-colors duration-300"
                 >
-                  info@udgracingdivision.com
+                  info@udgracingdivision.cat
                 </motion.a>
               </div>
             </motion.div>
