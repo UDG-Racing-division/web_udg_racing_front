@@ -18,7 +18,7 @@ export function TeamSection({ settings }: TeamSectionProps) {
   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
 
-  const teamPhoto = settings?.team_photo || "/images/team/team-photo.jpg";
+  const teamPhoto = settings?.team_photo || "../../equip.jpg";
   const teamDescription = settings?.team_description;
 
   return (
