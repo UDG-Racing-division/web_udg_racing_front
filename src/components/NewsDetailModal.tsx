@@ -65,7 +65,7 @@ export function NewsDetailModal({ news, onClose }: NewsDetailModalProps) {
               <img
                 src={allImages[currentImageIndex].image}
                 alt={translate(news.title)}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
 
               {allImages.length > 1 && (

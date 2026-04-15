@@ -189,7 +189,7 @@ function HorizontalNewsCard({
         <img
           src={item.image}
           alt={translate(item.title)}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
         />
 
         {/* Overlay gradient */}
