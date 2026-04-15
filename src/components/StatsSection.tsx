@@ -102,7 +102,7 @@ export function StatsSection({ stats }: StatsSectionProps) {
           />
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -140,7 +140,7 @@ export function StatsSection({ stats }: StatsSectionProps) {
                       stiffness: 300,
                     }}
                   >
-                    <div className="bg-zinc-800/50 border-2 border-zinc-700 p-8 text-center group-hover:border-[var(--color-udg-blue)] transition-colors duration-300 relative overflow-hidden">
+                    <div className="bg-zinc-800/50 border-2 border-zinc-700 p-4 sm:p-8 text-center group-hover:border-[var(--color-udg-blue)] transition-colors duration-300 relative overflow-hidden">
                       {/* Animated background on hover */}
                       <motion.div
                         className="absolute inset-0 bg-gradient-to-br from-[var(--color-udg-blue)]/10 to-transparent opacity-0 group-hover:opacity-100"
@@ -150,11 +150,11 @@ export function StatsSection({ stats }: StatsSectionProps) {
                       />
 
                       <div className="relative z-10">
-                        <div className="font-racing text-5xl sm:text-6xl text-white mb-2">
+                        <div className="font-racing text-3xl sm:text-5xl md:text-6xl text-white mb-2 break-words">
                           <AnimatedCounter value={stat.value} />
                         </div>
                         <motion.div
-                          className="text-[var(--color-udg-blue)] font-bold text-xl mb-2 flex items-center justify-center gap-2"
+                          className="text-[var(--color-udg-blue)] font-bold text-base sm:text-xl mb-2 flex items-center justify-center gap-2"
                           whileHover={{
                             scale: 1.1,
                           }}
@@ -187,12 +187,12 @@ export function StatsSection({ stats }: StatsSectionProps) {
                   </motion.a>
                 ) : (
                   <div className="relative block">
-                    <div className="bg-zinc-800/50 border-2 border-zinc-700 p-8 text-center relative overflow-hidden">
+                    <div className="bg-zinc-800/50 border-2 border-zinc-700 p-4 sm:p-8 text-center relative overflow-hidden">
                       <div className="relative z-10">
-                        <div className="font-racing text-5xl sm:text-6xl text-white mb-2">
+                        <div className="font-racing text-3xl sm:text-5xl md:text-6xl text-white mb-2 break-words">
                           <AnimatedCounter value={stat.value} />
                         </div>
-                        <div className="text-[var(--color-udg-blue)] font-bold text-xl mb-2">
+                        <div className="text-[var(--color-udg-blue)] font-bold text-base sm:text-xl mb-2">
                           {translate(stat.unit)}
                         </div>
                         <div className="text-gray-400 uppercase tracking-wide text-sm">
