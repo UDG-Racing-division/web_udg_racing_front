@@ -290,7 +290,7 @@ export function AboutSection({ settings }: AboutSectionProps) {
                 duration: 0.6,
                 delay: 1,
               }}
-              className="absolute bottom-2 left-2 md:-bottom-8 md:-left-8 bg-black/90 backdrop-blur-sm border border-[var(--color-udg-blue)] p-6"
+              className="absolute bottom-2 left-2 lg:-bottom-8 lg:-left-8 bg-black/90 backdrop-blur-sm border border-[var(--color-udg-blue)] p-6"
             >
               <div className="flex items-center gap-6">
                 <div>
