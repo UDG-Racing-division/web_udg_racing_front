@@ -84,21 +84,26 @@ export function NewsSection({ news }: NewsSectionProps) {
           {news.map((item, index) => {
             const start = index / news.length;
             const end = (index + 1) / news.length;
+            const isLast = index === news.length - 1;
             // Current card opacity and scale
             const opacity = useTransform(
               scrollYProgress,
-              [start - 0.1, start, end - 0.1, end],
-              [0, 1, 1, 0]
+              isLast
+                ? [start - 0.1, start]
+                : [start - 0.1, start, end - 0.1, end],
+              isLast ? [0, 1] : [0, 1, 1, 0]
             );
             const scale = useTransform(
               scrollYProgress,
-              [start - 0.1, start, end - 0.1, end],
-              [0.8, 1, 1, 1.1]
+              isLast
+                ? [start - 0.1, start]
+                : [start - 0.1, start, end - 0.1, end],
+              isLast ? [0.8, 1] : [0.8, 1, 1, 1.1]
             );
             const x = useTransform(
               scrollYProgress,
-              [start, end - 0.1, end],
-              ["0%", "0%", "-100%"]
+              isLast ? [start, 1] : [start, end - 0.1, end],
+              isLast ? ["0%", "0%"] : ["0%", "0%", "-100%"]
             );
 
             const handleClick = () => {
@@ -107,8 +112,10 @@ export function NewsSection({ news }: NewsSectionProps) {
 
             const pointerEvents = useTransform(
               scrollYProgress,
-              [start, start + 0.05, end - 0.05, end],
-              ["none", "auto", "auto", "none"]
+              isLast
+                ? [start, start + 0.05]
+                : [start, start + 0.05, end - 0.05, end],
+              isLast ? ["none", "auto"] : ["none", "auto", "auto", "none"]
             );
 
             return (
