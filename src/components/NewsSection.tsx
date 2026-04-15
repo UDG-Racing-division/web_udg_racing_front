@@ -110,12 +110,19 @@ export function NewsSection({ news }: NewsSectionProps) {
               setSelectedNews(item);
             };
 
+            const isFirst = index === 0;
             const pointerEvents = useTransform(
               scrollYProgress,
-              isLast
-                ? [start, start + 0.05]
-                : [start, start + 0.05, end - 0.05, end],
-              isLast ? ["none", "auto"] : ["none", "auto", "auto", "none"]
+              isFirst
+                ? [end - 0.05, end]
+                : isLast
+                  ? [start, start + 0.05]
+                  : [start, start + 0.05, end - 0.05, end],
+              isFirst
+                ? ["auto", "none"]
+                : isLast
+                  ? ["none", "auto"]
+                  : ["none", "auto", "auto", "none"]
             );
 
             return (
