@@ -76,13 +76,13 @@ export function SponsorCarousel({ sponsors }: SponsorCarouselProps) {
               <motion.div
                 className="flex gap-20 items-center"
                 animate={{
-                  x: [0, -1920],
+                  x: [`0px`, `-${mainSponsors.length * (320 + 80)}px`],
                 }}
                 transition={{
                   x: {
                     repeat: Infinity,
                     repeatType: "loop",
-                    duration: 40,
+                    duration: mainSponsors.length * 5,
                     ease: "linear",
                   },
                 }}
@@ -121,13 +121,13 @@ export function SponsorCarousel({ sponsors }: SponsorCarouselProps) {
               <motion.div
                 className="flex gap-12 items-center"
                 animate={{
-                  x: [-1920, 0],
+                  x: [`-${secondarySponsors.length * (192 + 48)}px`, `0px`],
                 }}
                 transition={{
                   x: {
                     repeat: Infinity,
                     repeatType: "loop",
-                    duration: 35,
+                    duration: secondarySponsors.length * 4,
                     ease: "linear",
                   },
                 }}
