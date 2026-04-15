@@ -127,7 +127,7 @@ export function NewsSection({ news }: NewsSectionProps) {
                   x,
                   pointerEvents,
                 }}
-                className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 lg:px-16"
+                className="absolute inset-0 flex items-start md:items-center justify-center pt-28 md:pt-0 px-4 sm:px-8 lg:px-16"
               >
                 <HorizontalNewsCard
                   item={item}
@@ -166,7 +166,7 @@ function HorizontalNewsCard({
 }) {
   return (
     <div
-      className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center cursor-pointer"
+      className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center cursor-pointer"
       onClick={onClick}
     >
       {/* Image side */}
@@ -196,8 +196,8 @@ function HorizontalNewsCard({
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
 
         {/* Decorative corners */}
-        <div className="absolute top-0 left-0 w-24 h-24 border-t-4 border-l-4 border-[var(--color-udg-blue)]" />
-        <div className="absolute bottom-0 right-0 w-24 h-24 border-b-4 border-r-4 border-[var(--color-udg-blue)]" />
+        <div className="absolute top-0 left-0 w-12 h-12 lg:w-24 lg:h-24 border-t-4 border-l-4 border-[var(--color-udg-blue)]" />
+        <div className="absolute bottom-0 right-0 w-12 h-12 lg:w-24 lg:h-24 border-b-4 border-r-4 border-[var(--color-udg-blue)]" />
       </motion.div>
 
       {/* Content side */}
