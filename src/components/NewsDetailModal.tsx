@@ -109,11 +109,7 @@ export function NewsDetailModal({ news, onClose }: NewsDetailModalProps) {
             </h2>
 
             <p className="text-gray-400 mb-6">
-              {new Date(news.date).toLocaleDateString("ca-ES", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
+              {translate(news.date)}
             </p>
 
             <div className="prose prose-invert max-w-none">
