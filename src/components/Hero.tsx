@@ -109,7 +109,7 @@ export function Hero({ settings }: HeroProps) {
               }}
             >
               {settings?.hero_title &&
-              translate(settings.hero_title).split(" ").length > 2
+                translate(settings.hero_title).split(" ").length > 2
                 ? translate(settings.hero_title).split(" ").slice(2).join(" ")
                 : "DIVISION"}
             </motion.span>

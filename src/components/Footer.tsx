@@ -105,9 +105,9 @@ export function Footer({ settings }: FooterProps) {
             animate={
               isInView
                 ? {
-                    opacity: 1,
-                    y: 0,
-                  }
+                  opacity: 1,
+                  y: 0,
+                }
                 : {}
             }
             transition={{
@@ -124,9 +124,9 @@ export function Footer({ settings }: FooterProps) {
               animate={
                 isInView
                   ? {
-                      opacity: 1,
-                      scale: 1,
-                    }
+                    opacity: 1,
+                    scale: 1,
+                  }
                   : {}
               }
               transition={{
@@ -144,8 +144,8 @@ export function Footer({ settings }: FooterProps) {
               animate={
                 isInView
                   ? {
-                      opacity: 1,
-                    }
+                    opacity: 1,
+                  }
                   : {}
               }
               transition={{
@@ -173,9 +173,9 @@ export function Footer({ settings }: FooterProps) {
                   animate={
                     isInView
                       ? {
-                          opacity: 1,
-                          scale: 1,
-                        }
+                        opacity: 1,
+                        scale: 1,
+                      }
                       : {}
                   }
                   transition={{
@@ -206,9 +206,9 @@ export function Footer({ settings }: FooterProps) {
             animate={
               isInView
                 ? {
-                    opacity: 1,
-                    y: 0,
-                  }
+                  opacity: 1,
+                  y: 0,
+                }
                 : {}
             }
             transition={{
@@ -230,9 +230,9 @@ export function Footer({ settings }: FooterProps) {
                   animate={
                     isInView
                       ? {
-                          opacity: 1,
-                          x: 0,
-                        }
+                        opacity: 1,
+                        x: 0,
+                      }
                       : {}
                   }
                   transition={{
@@ -267,9 +267,9 @@ export function Footer({ settings }: FooterProps) {
             animate={
               isInView
                 ? {
-                    opacity: 1,
-                    y: 0,
-                  }
+                  opacity: 1,
+                  y: 0,
+                }
                 : {}
             }
             transition={{
@@ -291,9 +291,9 @@ export function Footer({ settings }: FooterProps) {
                   animate={
                     isInView
                       ? {
-                          opacity: 1,
-                          x: 0,
-                        }
+                        opacity: 1,
+                        x: 0,
+                      }
                       : {}
                   }
                   transition={{
@@ -328,8 +328,8 @@ export function Footer({ settings }: FooterProps) {
               animate={
                 isInView
                   ? {
-                      opacity: 1,
-                    }
+                    opacity: 1,
+                  }
                   : {}
               }
               transition={{
@@ -375,9 +375,9 @@ export function Footer({ settings }: FooterProps) {
           animate={
             isInView
               ? {
-                  opacity: 1,
-                  y: 0,
-                }
+                opacity: 1,
+                y: 0,
+              }
               : {}
           }
           transition={{

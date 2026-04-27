@@ -89,11 +89,10 @@ export function NewsDetailModal({ news, onClose }: NewsDetailModalProps) {
                       <button
                         key={index}
                         onClick={() => setCurrentImageIndex(index)}
-                        className={`w-2 h-2 rounded-full transition-all ${
-                          index === currentImageIndex
+                        className={`w-2 h-2 rounded-full transition-all ${index === currentImageIndex
                             ? "bg-[var(--color-udg-blue)] w-8"
                             : "bg-white/50"
-                        }`}
+                          }`}
                       />
                     ))}
                   </div>

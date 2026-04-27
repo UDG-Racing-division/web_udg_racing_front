@@ -46,9 +46,9 @@ export function AboutSection({ settings }: AboutSectionProps) {
             animate={
               isInView
                 ? {
-                    opacity: 1,
-                    x: 0,
-                  }
+                  opacity: 1,
+                  x: 0,
+                }
                 : {}
             }
             transition={{
@@ -64,9 +64,9 @@ export function AboutSection({ settings }: AboutSectionProps) {
               animate={
                 isInView
                   ? {
-                      opacity: 1,
-                      y: 0,
-                    }
+                    opacity: 1,
+                    y: 0,
+                  }
                   : {}
               }
               transition={{
@@ -94,9 +94,9 @@ export function AboutSection({ settings }: AboutSectionProps) {
                 animate={
                   isInView
                     ? {
-                        opacity: 1,
-                        y: 0,
-                      }
+                      opacity: 1,
+                      y: 0,
+                    }
                     : {}
                 }
                 transition={{
@@ -116,9 +116,9 @@ export function AboutSection({ settings }: AboutSectionProps) {
                 animate={
                   isInView
                     ? {
-                        opacity: 1,
-                        y: 0,
-                      }
+                      opacity: 1,
+                      y: 0,
+                    }
                     : {}
                 }
                 transition={{
@@ -138,9 +138,9 @@ export function AboutSection({ settings }: AboutSectionProps) {
                 animate={
                   isInView
                     ? {
-                        opacity: 1,
-                        y: 0,
-                      }
+                      opacity: 1,
+                      y: 0,
+                    }
                     : {}
                 }
                 transition={{
@@ -161,9 +161,9 @@ export function AboutSection({ settings }: AboutSectionProps) {
               animate={
                 isInView
                   ? {
-                      opacity: 1,
-                      y: 0,
-                    }
+                    opacity: 1,
+                    y: 0,
+                  }
                   : {}
               }
               transition={{
@@ -207,9 +207,9 @@ export function AboutSection({ settings }: AboutSectionProps) {
             animate={
               isInView
                 ? {
-                    opacity: 1,
-                    x: 0,
-                  }
+                  opacity: 1,
+                  x: 0,
+                }
                 : {}
             }
             transition={{
@@ -241,9 +241,9 @@ export function AboutSection({ settings }: AboutSectionProps) {
                 animate={
                   isInView
                     ? {
-                        scale: 1,
-                        opacity: 1,
-                      }
+                      scale: 1,
+                      opacity: 1,
+                    }
                     : {}
                 }
                 transition={{
@@ -261,9 +261,9 @@ export function AboutSection({ settings }: AboutSectionProps) {
                 animate={
                   isInView
                     ? {
-                        scale: 1,
-                        opacity: 1,
-                      }
+                      scale: 1,
+                      opacity: 1,
+                    }
                     : {}
                 }
                 transition={{
@@ -281,9 +281,9 @@ export function AboutSection({ settings }: AboutSectionProps) {
               animate={
                 isInView
                   ? {
-                      opacity: 1,
-                      y: 0,
-                    }
+                    opacity: 1,
+                    y: 0,
+                  }
                   : {}
               }
               transition={{

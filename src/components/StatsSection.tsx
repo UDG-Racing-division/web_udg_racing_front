@@ -52,9 +52,9 @@ export function StatsSection({ stats }: StatsSectionProps) {
           animate={
             isInView
               ? {
-                  opacity: 1,
-                  y: 0,
-                }
+                opacity: 1,
+                y: 0,
+              }
               : {}
           }
           transition={{
@@ -71,9 +71,9 @@ export function StatsSection({ stats }: StatsSectionProps) {
             animate={
               isInView
                 ? {
-                    opacity: 1,
-                    scale: 1,
-                  }
+                  opacity: 1,
+                  scale: 1,
+                }
                 : {}
             }
             transition={{
@@ -91,8 +91,8 @@ export function StatsSection({ stats }: StatsSectionProps) {
             animate={
               isInView
                 ? {
-                    scaleX: 1,
-                  }
+                  scaleX: 1,
+                }
                 : {}
             }
             transition={{
@@ -113,9 +113,9 @@ export function StatsSection({ stats }: StatsSectionProps) {
               animate={
                 isInView
                   ? {
-                      opacity: 1,
-                      y: 0,
-                    }
+                    opacity: 1,
+                    y: 0,
+                  }
                   : {}
               }
               transition={{

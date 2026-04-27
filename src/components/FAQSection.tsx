@@ -22,7 +22,7 @@ export function FAQSection() {
     <section id="faq" className="py-24 bg-zinc-950 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-[var(--color-udg-blue)] opacity-5 skew-x-12 transform translate-x-32" />
-      
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
