@@ -54,7 +54,7 @@ export function LanguageSwitcher() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute right-0 bottom-full mb-2 md:bottom-auto md:top-full md:mt-2 md:mb-0 w-40 bg-[var(--theme-bg-card)] border border-[var(--theme-border)] rounded-lg shadow-lg overflow-hidden z-50"
+            className="absolute left-0 md:left-auto md:right-0 bottom-full mb-2 md:bottom-auto md:top-full md:mt-2 md:mb-0 w-40 bg-[var(--theme-bg-card)] border border-[var(--theme-border)] rounded-lg shadow-lg overflow-hidden z-50"
           >
             {languages.map((lang) => (
               <button
