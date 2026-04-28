@@ -164,6 +164,17 @@ export function Navigation() {
                 {link.label}
               </motion.a>
             ))}
+            
+            {/* Mobile Settings */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3, delay: navLinks.length * 0.05 }}
+              className="flex items-center gap-4 pt-4 mt-2 border-t border-[var(--theme-border)]"
+            >
+              <ThemeToggle />
+              <LanguageSwitcher />
+            </motion.div>
           </div>
         </motion.div>
       </motion.nav>
