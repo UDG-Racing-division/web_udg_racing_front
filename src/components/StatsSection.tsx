@@ -23,7 +23,7 @@ export function StatsSection({ stats }: StatsSectionProps) {
     <section
       id="stats"
       ref={ref}
-      className="py-24 bg-gradient-to-b from-black to-zinc-900 relative overflow-hidden"
+      className="py-24 bg-[var(--theme-bg-page)] relative overflow-hidden"
     >
       {/* Animated background elements */}
       <motion.div
@@ -63,7 +63,7 @@ export function StatsSection({ stats }: StatsSectionProps) {
           className="text-center mb-16"
         >
           <motion.h2
-            className="font-racing text-4xl sm:text-5xl md:text-6xl text-white mb-4"
+            className="font-racing text-4xl sm:text-5xl md:text-6xl text-[var(--theme-text-heading)] mb-4"
             initial={{
               opacity: 0,
               scale: 0.9,
@@ -140,7 +140,7 @@ export function StatsSection({ stats }: StatsSectionProps) {
                       stiffness: 300,
                     }}
                   >
-                    <div className="bg-zinc-800/50 border-2 border-zinc-700 p-4 sm:p-8 text-center group-hover:border-[var(--color-udg-blue)] transition-colors duration-300 relative overflow-hidden">
+                    <div className="bg-[var(--theme-bg-section)] border-2 border-[var(--theme-border)] p-4 sm:p-8 text-center group-hover:border-[var(--color-udg-blue)] transition-colors duration-300 relative overflow-hidden">
                       {/* Animated background on hover */}
                       <motion.div
                         className="absolute inset-0 bg-gradient-to-br from-[var(--color-udg-blue)]/10 to-transparent opacity-0 group-hover:opacity-100"
@@ -150,7 +150,7 @@ export function StatsSection({ stats }: StatsSectionProps) {
                       />
 
                       <div className="relative z-10">
-                        <div className="font-racing text-3xl sm:text-5xl md:text-6xl text-white mb-2 break-words">
+                        <div className="font-racing text-3xl sm:text-5xl md:text-6xl text-[var(--theme-text-heading)] mb-2 break-words">
                           <AnimatedCounter value={stat.value} />
                         </div>
                         <motion.div
@@ -164,7 +164,7 @@ export function StatsSection({ stats }: StatsSectionProps) {
                             <ExternalLink size={16} className="opacity-50" />
                           )}
                         </motion.div>
-                        <div className="text-gray-400 uppercase tracking-wide text-sm">
+                        <div className="text-[var(--theme-text-muted)] uppercase tracking-wide text-sm">
                           {translate(stat.label)}
                         </div>
                       </div>
@@ -187,15 +187,15 @@ export function StatsSection({ stats }: StatsSectionProps) {
                   </motion.a>
                 ) : (
                   <div className="relative block">
-                    <div className="bg-zinc-800/50 border-2 border-zinc-700 p-4 sm:p-8 text-center relative overflow-hidden">
+                    <div className="bg-[var(--theme-bg-section)] border-2 border-[var(--theme-border)] p-4 sm:p-8 text-center relative overflow-hidden">
                       <div className="relative z-10">
-                        <div className="font-racing text-3xl sm:text-5xl md:text-6xl text-white mb-2 break-words">
+                        <div className="font-racing text-3xl sm:text-5xl md:text-6xl text-[var(--theme-text-heading)] mb-2 break-words">
                           <AnimatedCounter value={stat.value} />
                         </div>
                         <div className="text-[var(--color-udg-blue)] font-bold text-base sm:text-xl mb-2">
                           {translate(stat.unit)}
                         </div>
-                        <div className="text-gray-400 uppercase tracking-wide text-sm">
+                        <div className="text-[var(--theme-text-muted)] uppercase tracking-wide text-sm">
                           {translate(stat.label)}
                         </div>
                       </div>

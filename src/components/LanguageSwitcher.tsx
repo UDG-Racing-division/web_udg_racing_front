@@ -39,7 +39,7 @@ export function LanguageSwitcher() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--color-bg-tertiary)] hover:bg-[var(--color-bg-card)] transition-colors duration-200 border border-[var(--color-border)]"
+        className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--theme-bg-section)] hover:bg-[var(--theme-bg-card-hover)] transition-colors duration-200 border border-[var(--theme-border)]"
         aria-label="Change language"
         aria-expanded={isOpen}
       >
@@ -54,16 +54,16 @@ export function LanguageSwitcher() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute right-0 mt-2 w-40 bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-lg shadow-lg overflow-hidden z-50"
+            className="absolute right-0 mt-2 w-40 bg-[var(--theme-bg-card)] border border-[var(--theme-border)] rounded-lg shadow-lg overflow-hidden z-50"
           >
             {languages.map((lang) => (
               <button
                 key={lang.code}
                 onClick={() => handleLanguageChange(lang.code)}
-                className={`w-full px-4 py-3 text-left flex items-center gap-3 hover:bg-[var(--color-bg-tertiary)] transition-colors duration-150 ${
+                className={`w-full px-4 py-3 text-left flex items-center gap-3 hover:bg-[var(--theme-bg-section-alt)] transition-colors duration-150 ${
                   language === lang.code
                     ? "bg-[var(--color-udg-blue)]/10 text-[var(--color-udg-blue)]"
-                    : "text-[var(--color-text)]"
+                    : "text-[var(--theme-text-body)]"
                 }`}
               >
                 <span className="text-lg">{lang.flag}</span>

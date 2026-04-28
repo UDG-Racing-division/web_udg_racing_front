@@ -42,7 +42,7 @@ export function LoadingScreen({ isLoading }: LoadingScreenProps) {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className="fixed inset-0 z-50 bg-black flex items-center justify-center overflow-hidden"
+          className="fixed inset-0 z-50 bg-[var(--theme-bg-page)] flex items-center justify-center overflow-hidden"
         >
           {/* Background grid pattern */}
           <div className="absolute inset-0 opacity-5">
@@ -95,7 +95,7 @@ export function LoadingScreen({ isLoading }: LoadingScreenProps) {
 
             {/* Progress bar */}
             <div className="w-full max-w-md">
-              <div className="h-1 bg-zinc-800 rounded-full overflow-hidden">
+              <div className="h-1 bg-[var(--theme-bg-muted)] rounded-full overflow-hidden">
                 <motion.div
                   className="h-full bg-gradient-blue"
                   style={{ width: `${progress}%` }}
@@ -106,7 +106,7 @@ export function LoadingScreen({ isLoading }: LoadingScreenProps) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="text-center text-gray-500 text-sm mt-4 tracking-wider"
+                className="text-center text-[var(--theme-text-muted)] text-sm mt-4 tracking-wider"
               >
                 {Math.round(progress)}%
               </motion.p>

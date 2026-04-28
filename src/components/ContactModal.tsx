@@ -72,7 +72,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm overflow-y-auto"
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm overflow-y-auto"
         onClick={onClose}
       >
         <motion.div
@@ -80,27 +80,27 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
           transition={{ type: "spring", damping: 25 }}
-          className="relative w-full max-w-2xl bg-[var(--color-bg-card)] rounded-lg shadow-2xl p-8 my-8"
+          className="relative w-full max-w-2xl bg-[var(--theme-bg-card)] rounded-lg shadow-2xl p-8 my-8"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 bg-black/50 hover:bg-black/70 rounded-full transition-colors z-10"
+            className="absolute top-4 right-4 p-2 bg-[var(--theme-bg-section)] hover:bg-[var(--theme-bg-muted)] rounded-full transition-colors z-10"
           >
-            <X size={24} className="text-white" />
+            <X size={24} className="text-[var(--theme-text-body)]" />
           </button>
 
-          <h2 className="font-racing text-3xl text-white mb-6">
+          <h2 className="font-racing text-3xl text-[var(--theme-text-heading)] mb-6">
             {t("contact.title")}
           </h2>
 
           {/* Custom Segmented Control */}
-          <div className="relative flex p-1 bg-zinc-900/50 rounded-xl border border-white/10 mb-8 backdrop-blur-sm">
+          <div className="relative flex p-1 bg-[var(--theme-bg-section)] rounded-xl border border-[var(--theme-border)] mb-8">
             <button
               onClick={() => setActiveTab("participate")}
               className={`flex-1 relative z-10 py-3 text-sm sm:text-base font-bold uppercase tracking-wide transition-colors duration-200 ${
-                activeTab === "participate" ? "text-white" : "text-gray-400 hover:text-white"
+                activeTab === "participate" ? "text-white" : "text-[var(--theme-text-muted)] hover:text-[var(--theme-text-heading)]"
               }`}
             >
               {t("contact.participate")}
@@ -108,7 +108,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             <button
               onClick={() => setActiveTab("sponsor")}
               className={`flex-1 relative z-10 py-3 text-sm sm:text-base font-bold uppercase tracking-wide transition-colors duration-200 ${
-                activeTab === "sponsor" ? "text-white" : "text-gray-400 hover:text-white"
+                activeTab === "sponsor" ? "text-white" : "text-[var(--theme-text-muted)] hover:text-[var(--theme-text-heading)]"
               }`}
             >
               {t("contact.sponsor")}
@@ -137,7 +137,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-gray-300 mb-2"
+                className="block text-sm font-medium text-[var(--theme-text-body)] mb-2"
               >
                 {t("contact.name")} *
               </label>
@@ -149,7 +149,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
-                className="w-full px-4 py-3 bg-[var(--color-bg-tertiary)] border border-[var(--color-border)] rounded-lg text-white focus:outline-none focus:border-[var(--color-udg-blue)] transition-colors"
+                className="w-full px-4 py-3 bg-[var(--theme-bg-input)] border border-[var(--theme-border)] rounded-lg text-[var(--theme-text-heading)] focus:outline-none focus:border-[var(--color-udg-blue)] transition-colors"
                 placeholder={
                   activeTab === "sponsor" ? "Company / Organization" : ""
                 }
@@ -159,7 +159,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-300 mb-2"
+                className="block text-sm font-medium text-[var(--theme-text-body)] mb-2"
               >
                 Email *
               </label>
@@ -171,14 +171,14 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
-                className="w-full px-4 py-3 bg-[var(--color-bg-tertiary)] border border-[var(--color-border)] rounded-lg text-white focus:outline-none focus:border-[var(--color-udg-blue)] transition-colors"
+                className="w-full px-4 py-3 bg-[var(--theme-bg-input)] border border-[var(--theme-border)] rounded-lg text-[var(--theme-text-heading)] focus:outline-none focus:border-[var(--color-udg-blue)] transition-colors"
               />
             </div>
 
             <div>
               <label
                 htmlFor="subject"
-                className="block text-sm font-medium text-gray-300 mb-2"
+                className="block text-sm font-medium text-[var(--theme-text-body)] mb-2"
               >
                 {t("contact.subject")} *
               </label>
@@ -190,14 +190,14 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 onChange={(e) =>
                   setFormData({ ...formData, subject: e.target.value })
                 }
-                className="w-full px-4 py-3 bg-[var(--color-bg-tertiary)] border border-[var(--color-border)] rounded-lg text-white focus:outline-none focus:border-[var(--color-udg-blue)] transition-colors"
+                className="w-full px-4 py-3 bg-[var(--theme-bg-input)] border border-[var(--theme-border)] rounded-lg text-[var(--theme-text-heading)] focus:outline-none focus:border-[var(--color-udg-blue)] transition-colors"
               />
             </div>
 
             <div>
               <label
                 htmlFor="message"
-                className="block text-sm font-medium text-gray-300 mb-2"
+                className="block text-sm font-medium text-[var(--theme-text-body)] mb-2"
               >
                 {t("contact.message")} *
               </label>
@@ -209,7 +209,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })
                 }
-                className="w-full px-4 py-3 bg-[var(--color-bg-tertiary)] border border-[var(--color-border)] rounded-lg text-white focus:outline-none focus:border-[var(--color-udg-blue)] transition-colors resize-none"
+                className="w-full px-4 py-3 bg-[var(--theme-bg-input)] border border-[var(--theme-border)] rounded-lg text-[var(--theme-text-heading)] focus:outline-none focus:border-[var(--color-udg-blue)] transition-colors resize-none"
               />
             </div>
 

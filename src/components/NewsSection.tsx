@@ -22,7 +22,7 @@ export function NewsSection({ news }: NewsSectionProps) {
     <section
       id="news"
       ref={sectionRef}
-      className="relative bg-black"
+      className="relative bg-[var(--theme-bg-section)]"
       style={{
         height: `${news.length * 100}vh`,
       }}
@@ -30,7 +30,7 @@ export function NewsSection({ news }: NewsSectionProps) {
       {/* Sticky container */}
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 bg-black" />
+        <div className="absolute inset-0 bg-[var(--theme-bg-section)]" />
 
         {/* Section title - fixed */}
         <motion.div
@@ -51,7 +51,7 @@ export function NewsSection({ news }: NewsSectionProps) {
           }}
           className="absolute top-12 left-4 sm:left-8 lg:left-16 z-20"
         >
-          <h2 className="font-racing text-4xl sm:text-5xl md:text-6xl text-white mb-4">
+          <h2 className="font-racing text-4xl sm:text-5xl md:text-6xl text-[var(--theme-text-heading)] mb-4">
             {t("news.title")}
           </h2>
           <div className="w-24 h-1 bg-gradient-blue" />
@@ -70,7 +70,7 @@ export function NewsSection({ news }: NewsSectionProps) {
             return (
               <motion.div
                 key={index}
-                className="w-8 h-1 bg-white"
+                className="w-8 h-1 bg-[var(--theme-text-subtle)]"
                 style={{
                   opacity,
                 }}
@@ -200,7 +200,7 @@ function HorizontalNewsCard({
         />
 
         {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, var(--theme-overlay-gradient-r), transparent)' }} />
 
         {/* Decorative corners */}
         <div className="absolute top-0 left-0 w-12 h-12 lg:w-24 lg:h-24 border-t-4 border-l-4 border-[var(--color-udg-blue)]" />
@@ -231,18 +231,18 @@ function HorizontalNewsCard({
         </div>
 
         {/* Title */}
-        <h3 className="font-racing text-4xl sm:text-5xl md:text-6xl text-white leading-tight">
+        <h3 className="font-racing text-4xl sm:text-5xl md:text-6xl text-[var(--theme-text-heading)] leading-tight">
           {translate(item.title)}
         </h3>
 
         {/* Excerpt */}
-        <p className="text-gray-400 text-lg sm:text-xl leading-relaxed">
+        <p className="text-[var(--theme-text-muted)] text-lg sm:text-xl leading-relaxed">
           {translate(item.excerpt)}
         </p>
 
         {/* Read more link */}
         <motion.span
-          className="inline-flex items-center gap-3 text-white font-bold text-lg group cursor-pointer"
+          className="inline-flex items-center gap-3 text-[var(--theme-text-heading)] font-bold text-lg group cursor-pointer"
           whileHover={{
             x: 10,
           }}
@@ -268,8 +268,8 @@ function HorizontalNewsCard({
         </motion.span>
 
         {/* Number indicator */}
-        <div className="pt-8 border-t border-zinc-800">
-          <span className="font-racing text-6xl text-zinc-800">
+        <div className="pt-8 border-t border-[var(--theme-border)]">
+          <span className="font-racing text-6xl text-[var(--theme-bg-muted)]">
             {String(index + 1).padStart(2, "0")}
           </span>
         </div>

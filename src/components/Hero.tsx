@@ -33,7 +33,7 @@ export function Hero({ settings }: HeroProps) {
       <Three3DBackground />
 
       {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90 z-10" />
+      <div className="absolute inset-0 z-10" style={{ background: 'linear-gradient(to bottom, var(--theme-overlay-start), var(--theme-overlay-mid), var(--theme-overlay-end))' }} />
 
       {/* Content */}
       <motion.div
@@ -57,7 +57,7 @@ export function Hero({ settings }: HeroProps) {
           }}
         >
           <motion.h1
-            className="font-racing text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white mb-6 tracking-tight"
+            className="font-racing text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[var(--theme-text-heading)] mb-6 tracking-tight"
             initial={{
               opacity: 0,
               y: 50,
@@ -129,7 +129,7 @@ export function Hero({ settings }: HeroProps) {
             duration: 0.8,
             delay: 0.9,
           }}
-          className="text-xl sm:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto"
+          className="text-xl sm:text-2xl text-[var(--theme-text-body)] mb-12 max-w-2xl mx-auto"
         >
           {translate(settings?.hero_subtitle) ||
             "Per Scratch. Enginyeria i velocitat des de la Universitat de Girona."}
@@ -158,7 +158,7 @@ export function Hero({ settings }: HeroProps) {
           </MagneticButton>
           <MagneticButton
             href="#team"
-            className="px-8 py-4 border-2 border-[var(--color-udg-blue)] text-white font-bold text-lg rounded-none hover:bg-[var(--color-udg-blue)] transition-all duration-300 uppercase tracking-wide cursor-pointer"
+            className="px-8 py-4 border-2 border-[var(--color-udg-blue)] text-[var(--theme-text-heading)] font-bold text-lg rounded-none hover:bg-[var(--color-udg-blue)] hover:text-white transition-all duration-300 uppercase tracking-wide cursor-pointer"
           >
             {t("hero.meetTeam")}
           </MagneticButton>
@@ -189,7 +189,7 @@ export function Hero({ settings }: HeroProps) {
             repeat: Infinity,
           }}
         >
-          <ChevronDown className="text-white/50" size={32} />
+          <ChevronDown className="text-[var(--theme-text-subtle)]" size={32} />
         </motion.div>
       </motion.button>
     </motion.section>

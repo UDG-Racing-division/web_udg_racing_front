@@ -21,7 +21,7 @@ export function AboutSection({ settings }: AboutSectionProps) {
     <section
       id="about"
       ref={ref}
-      className="py-32 bg-zinc-900 relative overflow-hidden"
+      className="py-32 bg-[var(--theme-bg-section)] relative overflow-hidden"
     >
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -74,7 +74,7 @@ export function AboutSection({ settings }: AboutSectionProps) {
               }}
               className="mb-12"
             >
-              <h2 className="font-racing text-5xl sm:text-6xl md:text-7xl text-white mb-6">
+              <h2 className="font-racing text-5xl sm:text-6xl md:text-7xl text-[var(--theme-text-heading)] mb-6">
                 {t("about.title")}
               </h2>
               <div className="w-24 h-1 bg-gradient-blue" />
@@ -103,7 +103,7 @@ export function AboutSection({ settings }: AboutSectionProps) {
                   duration: 0.6,
                   delay: 0.2,
                 }}
-                className="text-gray"
+                className="text-[var(--theme-text-body)]"
               >
                 {t("about.paragraph1")}
               </motion.p>
@@ -125,7 +125,7 @@ export function AboutSection({ settings }: AboutSectionProps) {
                   duration: 0.6,
                   delay: 0.3,
                 }}
-                className="text-gray"
+                className="text-[var(--theme-text-body)]"
               >
                 {t("about.paragraph2")}
               </motion.p>
@@ -147,7 +147,7 @@ export function AboutSection({ settings }: AboutSectionProps) {
                   duration: 0.6,
                   delay: 0.4,
                 }}
-                className="text-gray"
+                className="text-[var(--theme-text-body)]"
               >
                 {t("about.paragraph3")}
               </motion.p>
@@ -230,7 +230,7 @@ export function AboutSection({ settings }: AboutSectionProps) {
                   duration: 0.6,
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, var(--theme-overlay-image), transparent, transparent)' }} />
 
               <motion.div
                 className="absolute top-0 right-0 w-32 h-32 border-t-4 border-r-4 border-[var(--color-udg-blue)]"
@@ -290,7 +290,7 @@ export function AboutSection({ settings }: AboutSectionProps) {
                 duration: 0.6,
                 delay: 1,
               }}
-              className="absolute bottom-2 left-2 lg:-bottom-8 lg:-left-8 bg-black/90 backdrop-blur-sm border border-[var(--color-udg-blue)] p-6"
+              className="absolute bottom-2 left-2 lg:-bottom-8 lg:-left-8 bg-[var(--theme-overlay-card)] backdrop-blur-sm border border-[var(--color-udg-blue)] p-6 shadow-lg"
             >
               <div className="flex items-center gap-6">
                 <div>
@@ -301,7 +301,7 @@ export function AboutSection({ settings }: AboutSectionProps) {
                     {t("about.yearsLabel")}
                   </div>
                 </div>
-                <div className="w-px h-12 bg-zinc-700" />
+                <div className="w-px h-12 bg-[var(--theme-divider)]" />
                 <div>
                   <div className="font-racing text-4xl text-[var(--color-udg-blue)]">
                     100+

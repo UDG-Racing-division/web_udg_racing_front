@@ -18,10 +18,10 @@ export function ScrollRevealText({
   const fillProgress = useTransform(scrollYProgress, [0, 1], [0, 100]);
   return <div ref={ref} className={`relative ${className}`}>
     {/* Background text (gray) */}
-    <div className="text-gray-600">{children}</div>
+    <div className="text-[var(--theme-text-faint)]">{children}</div>
 
     {/* Filled text (white) with clip-path */}
-    <motion.div className="absolute inset-0 text-white overflow-hidden" style={{
+    <motion.div className="absolute inset-0 text-[var(--theme-text-heading)] overflow-hidden" style={{
       clipPath: useTransform(fillProgress, value => `inset(0 ${100 - value}% 0 0)`)
     }}>
       {children}

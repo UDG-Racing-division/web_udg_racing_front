@@ -13,7 +13,7 @@ export function NewsCard({
   date,
   image
 }: NewsCardProps) {
-  return <motion.div className="group bg-zinc-900 border border-zinc-800 overflow-hidden hover:border-[var(--color-udg-blue)] transition-all duration-500" whileHover={{
+  return <motion.div className="group bg-[var(--theme-bg-card)] border border-[var(--theme-border)] overflow-hidden hover:border-[var(--color-udg-blue)] transition-all duration-500 shadow-sm" whileHover={{
     y: -4
   }} transition={{
     type: 'spring',
@@ -22,14 +22,14 @@ export function NewsCard({
   }}>
       <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
         {/* Image section - 2 columns */}
-        <div className="md:col-span-2 aspect-video md:aspect-auto overflow-hidden relative bg-zinc-800">
+        <div className="md:col-span-2 aspect-video md:aspect-auto overflow-hidden relative bg-[var(--theme-bg-section)]">
           {image ? <motion.img src={image} alt={title} className="w-full h-full object-cover" whileHover={{
           scale: 1.1
         }} transition={{
           duration: 0.8,
           ease: [0.22, 1, 0.36, 1]
         }} /> : <div className="w-full h-full flex items-center justify-center relative overflow-hidden">
-              <motion.div className="text-zinc-700 font-racing text-5xl z-10" whileHover={{
+              <motion.div className="text-[var(--theme-text-faint)] font-racing text-5xl z-10" whileHover={{
             scale: 1.1
           }} transition={{
             type: 'spring',
@@ -76,7 +76,7 @@ export function NewsCard({
               <span>{date}</span>
             </motion.div>
 
-            <motion.h3 className="font-bold text-2xl md:text-3xl text-white mb-4 group-hover:text-[var(--color-udg-blue)] transition-colors duration-300" initial={{
+            <motion.h3 className="font-bold text-2xl md:text-3xl text-[var(--theme-text-heading)] mb-4 group-hover:text-[var(--color-udg-blue)] transition-colors duration-300" initial={{
             opacity: 0,
             y: 10
           }} whileInView={{
@@ -89,7 +89,7 @@ export function NewsCard({
               {title}
             </motion.h3>
 
-            <motion.p className="text-gray-400 leading-relaxed mb-6" initial={{
+            <motion.p className="text-[var(--theme-text-muted)] leading-relaxed mb-6" initial={{
             opacity: 0
           }} whileInView={{
             opacity: 1
@@ -101,7 +101,7 @@ export function NewsCard({
             </motion.p>
           </div>
 
-          <motion.div className="flex items-center gap-2 text-white font-medium group-hover:text-[var(--color-udg-blue)] transition-colors duration-300 cursor-pointer" whileHover={{
+          <motion.div className="flex items-center gap-2 text-[var(--theme-text-heading)] font-medium group-hover:text-[var(--color-udg-blue)] transition-colors duration-300 cursor-pointer" whileHover={{
           x: 5
         }} transition={{
           type: 'spring',

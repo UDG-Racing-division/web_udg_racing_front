@@ -25,10 +25,10 @@ export function TeamSection({ settings }: TeamSectionProps) {
     <section
       id="team"
       ref={sectionRef}
-      className="relative min-h-screen bg-black py-24 overflow-hidden"
+      className="relative min-h-screen bg-[var(--theme-bg-page)] py-24 overflow-hidden"
     >
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-900 to-black" />
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, var(--theme-bg-page), var(--theme-bg-section), var(--theme-bg-page))' }} />
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div style={{ opacity }} className="max-w-7xl mx-auto">
@@ -40,7 +40,7 @@ export function TeamSection({ settings }: TeamSectionProps) {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="font-racing text-5xl md:text-7xl text-white mb-6">
+            <h2 className="font-racing text-5xl md:text-7xl text-[var(--theme-text-heading)] mb-6">
               {t("team.title")}
             </h2>
             <div className="w-24 h-1 bg-[var(--color-udg-blue)] mx-auto" />
@@ -67,7 +67,7 @@ export function TeamSection({ settings }: TeamSectionProps) {
               <div className="absolute bottom-0 right-0 w-24 h-24 border-b-4 border-r-4 border-[var(--color-udg-blue)]" />
 
               {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, var(--theme-overlay-image), transparent, transparent)' }} />
             </motion.div>
 
             {/* Team description */}
@@ -78,8 +78,8 @@ export function TeamSection({ settings }: TeamSectionProps) {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="space-y-6"
             >
-              <div className="prose prose-invert max-w-none">
-                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+              <div className="prose max-w-none">
+                <p className="text-lg md:text-xl text-[var(--theme-text-body)] leading-relaxed">
                   {teamDescription
                     ? translate(teamDescription)
                     : t("team.description")}

@@ -3,6 +3,7 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { ThemeToggle } from "./ThemeToggle";
 import { ContactModal } from "./ContactModal";
 
 export function Navigation() {
@@ -51,7 +52,7 @@ export function Navigation() {
           stiffness: 100,
         }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-            ? "bg-black/50 backdrop-blur-md shadow-lg"
+            ? "bg-[var(--theme-bg-nav)] backdrop-blur-md shadow-lg"
             : "bg-transparent backdrop-blur-sm"
           }`}
       >
@@ -81,7 +82,7 @@ export function Navigation() {
                 <motion.a
                   key={link.label}
                   href={link.href}
-                  className="relative text-white font-medium group"
+                  className="relative text-[var(--theme-text-heading)] font-medium group"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
@@ -99,13 +100,14 @@ export function Navigation() {
               >
                 {t("nav.contact")}
               </motion.button>
+              <ThemeToggle />
               <LanguageSwitcher />
             </div>
 
             {/* Mobile menu button */}
             <motion.button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden text-white p-2"
+              className="md:hidden text-[var(--theme-text-heading)] p-2"
               whileTap={{
                 scale: 0.9,
               }}
@@ -134,7 +136,7 @@ export function Navigation() {
           transition={{
             duration: 0.3,
           }}
-          className="md:hidden bg-black/98 backdrop-blur-sm border-t border-white/10 overflow-hidden"
+          className="md:hidden bg-[var(--theme-bg-nav-mobile)] backdrop-blur-sm border-t border-[var(--theme-border)] overflow-hidden"
         >
           <div className="px-4 py-6 space-y-4">
             {navLinks.map((link, index) => (
@@ -142,7 +144,7 @@ export function Navigation() {
                 key={link.label}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-white hover:text-[var(--color-udg-blue)] transition-colors duration-200 font-medium text-lg"
+                className="block text-[var(--theme-text-heading)] hover:text-[var(--color-udg-blue)] transition-colors duration-200 font-medium text-lg"
                 initial={{
                   opacity: 0,
                   x: -20,

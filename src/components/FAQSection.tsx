@@ -19,7 +19,7 @@ export function FAQSection() {
   };
 
   return (
-    <section id="faq" className="py-24 bg-zinc-950 relative overflow-hidden">
+    <section id="faq" className="py-24 bg-[var(--theme-bg-section)] relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-[var(--color-udg-blue)] opacity-5 skew-x-12 transform translate-x-32" />
 
@@ -31,11 +31,11 @@ export function FAQSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="font-racing text-4xl sm:text-5xl text-white mb-6">
+          <h2 className="font-racing text-4xl sm:text-5xl text-[var(--theme-text-heading)] mb-6">
             {getData("faq.title") || t("faq.title")}
           </h2>
           <div className="w-24 h-1 bg-[var(--color-udg-blue)] mx-auto mb-6" />
-          <p className="text-gray-400 text-lg">
+          <p className="text-[var(--theme-text-muted)] text-lg">
             {getData("faq.description") || t("faq.description")}
           </p>
         </motion.div>
@@ -48,13 +48,13 @@ export function FAQSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="border border-zinc-800 rounded-lg bg-zinc-900/50 overflow-hidden backdrop-blur-sm"
+              className="border border-[var(--theme-border)] rounded-lg bg-[var(--theme-bg-card)] overflow-hidden shadow-sm"
             >
               <button
                 onClick={() => toggleQuestion(index)}
-                className="w-full flex items-center justify-between p-6 text-left hover:bg-zinc-800/50 transition-colors"
+                className="w-full flex items-center justify-between p-6 text-left hover:bg-[var(--theme-bg-card-hover)] transition-colors"
               >
-                <span className="text-white font-medium text-lg pr-8">
+                <span className="text-[var(--theme-text-heading)] font-medium text-lg pr-8">
                   {item.question}
                 </span>
                 <span className="text-[var(--color-udg-blue)]">
@@ -74,7 +74,7 @@ export function FAQSection() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                   >
-                    <div className="p-6 pt-0 text-gray-400 leading-relaxed border-t border-zinc-800/50">
+                    <div className="p-6 pt-0 text-[var(--theme-text-body)] leading-relaxed border-t border-[var(--theme-border)]">
                       {item.answer}
                     </div>
                   </motion.div>

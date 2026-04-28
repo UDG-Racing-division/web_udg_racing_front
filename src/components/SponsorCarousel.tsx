@@ -11,6 +11,7 @@ interface SponsorCarouselProps {
 export function SponsorCarousel({ sponsors }: SponsorCarouselProps) {
   const { t } = useLanguage();
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  
   // Filter sponsors by type
   const mainSponsors = sponsors.filter((s) =>
     ["main", "principal", "premium"].includes((s.type || "").toLowerCase())
@@ -33,9 +34,9 @@ export function SponsorCarousel({ sponsors }: SponsorCarouselProps) {
   ];
 
   return (
-    <section id="sponsors" className="py-24 bg-black relative overflow-hidden">
+    <section id="sponsors" className="py-24 bg-[var(--theme-bg-page)] relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 via-black to-zinc-900" />
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, var(--theme-bg-section), var(--theme-bg-page), var(--theme-bg-section))' }} />
 
       <div className="relative z-10">
         {/* Section header */}
@@ -57,11 +58,11 @@ export function SponsorCarousel({ sponsors }: SponsorCarouselProps) {
           }}
           className="text-center mb-16 px-4"
         >
-          <h2 className="font-racing text-4xl sm:text-5xl md:text-6xl text-white mb-4">
+          <h2 className="font-racing text-4xl sm:text-5xl md:text-6xl text-[var(--theme-text-heading)] mb-4">
             {t("sponsors.title")}
           </h2>
           <div className="w-24 h-1 bg-gradient-blue mx-auto mb-6" />
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-[var(--theme-text-muted)] text-lg max-w-2xl mx-auto">
             {t("sponsors.description")}
           </p>
         </motion.div>
@@ -69,8 +70,8 @@ export function SponsorCarousel({ sponsors }: SponsorCarouselProps) {
         {/* Main Sponsors Carousel */}
         {mainSponsors.length > 0 && (
           <div className="relative mb-12">
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, var(--theme-fade-color), transparent)' }} />
+            <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, var(--theme-fade-color), transparent)' }} />
 
             <div className="overflow-hidden py-8">
               <motion.div
@@ -97,11 +98,11 @@ export function SponsorCarousel({ sponsors }: SponsorCarouselProps) {
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
                   >
-                    <div className="w-80 h-48 flex items-center justify-center p-8 bg-white/5 backdrop-blur-sm border border-zinc-700 group-hover:border-[var(--color-udg-blue)] transition-all duration-300 rounded-xl">
+                    <div className="w-80 h-48 flex items-center justify-center p-8 bg-zinc-900/50 border border-zinc-800 group-hover:border-[var(--color-udg-blue)] transition-all duration-300 rounded-xl shadow-sm">
                       <img
                         src={sponsor.logo}
                         alt={sponsor.name}
-                        className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 opacity-90 group-hover:opacity-100 transition-all duration-300"
+                        className="max-w-full max-h-full object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
                       />
                     </div>
                   </motion.a>
@@ -114,8 +115,8 @@ export function SponsorCarousel({ sponsors }: SponsorCarouselProps) {
         {/* Secondary Sponsors Carousel */}
         {secondarySponsors.length > 0 && (
           <div className="relative">
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, var(--theme-fade-color), transparent)' }} />
+            <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, var(--theme-fade-color), transparent)' }} />
 
             <div className="overflow-hidden py-6">
               <motion.div
@@ -142,11 +143,11 @@ export function SponsorCarousel({ sponsors }: SponsorCarouselProps) {
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
                   >
-                    <div className="w-48 h-28 flex items-center justify-center p-5 bg-white/5 backdrop-blur-sm border border-zinc-800 group-hover:border-[var(--color-udg-blue)] transition-all duration-300 rounded-lg">
+                    <div className="w-48 h-28 flex items-center justify-center p-5 bg-zinc-900/50 border border-zinc-800 group-hover:border-[var(--color-udg-blue)] transition-all duration-300 rounded-lg shadow-sm">
                       <img
                         src={sponsor.logo}
                         alt={sponsor.name}
-                        className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100 transition-all duration-300"
+                        className="max-w-full max-h-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
                       />
                     </div>
                   </motion.a>
@@ -175,12 +176,12 @@ export function SponsorCarousel({ sponsors }: SponsorCarouselProps) {
           }}
           className="text-center mt-20 px-4"
         >
-          <p className="text-gray-400 mb-6 text-lg">
+          <p className="text-[var(--theme-text-muted)] mb-6 text-lg">
             {t("sponsors.collaborate")}
           </p>
           <motion.button
             onClick={() => setIsContactModalOpen(true)}
-            className="inline-flex items-center gap-3 px-10 py-5 bg-transparent border-2 border-[var(--color-udg-blue)] text-white font-bold text-lg uppercase tracking-wider overflow-hidden group relative"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-transparent border-2 border-[var(--color-udg-blue)] text-[var(--theme-text-heading)] font-bold text-lg uppercase tracking-wider overflow-hidden group relative"
             whileHover={{
               scale: 1.05,
             }}

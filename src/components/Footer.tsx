@@ -92,7 +92,7 @@ export function Footer({ settings }: FooterProps) {
     <footer
       id="contact"
       ref={ref}
-      className="bg-black border-t border-zinc-800 py-16"
+      className="bg-[var(--theme-bg-page)] border-t border-[var(--theme-border)] py-16"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
@@ -152,7 +152,7 @@ export function Footer({ settings }: FooterProps) {
                 duration: 0.6,
                 delay: 0.3,
               }}
-              className="text-gray-400 mb-6 max-w-md"
+              className="text-[var(--theme-text-muted)] mb-6 max-w-md"
             >
               {t("footer.description")}
             </motion.p>
@@ -189,7 +189,7 @@ export function Footer({ settings }: FooterProps) {
                   whileTap={{
                     scale: 0.95,
                   }}
-                  className="w-10 h-10 bg-zinc-900 border border-zinc-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-[var(--color-racing-red)] transition-all duration-300"
+                  className="w-10 h-10 bg-[var(--theme-bg-section)] border border-[var(--theme-border)] flex items-center justify-center text-[var(--theme-text-muted)] hover:text-[var(--color-udg-blue)] hover:border-[var(--color-udg-blue)] transition-all duration-300"
                 >
                   <social.icon size={20} />
                 </motion.a>
@@ -216,7 +216,7 @@ export function Footer({ settings }: FooterProps) {
               delay: 0.2,
             }}
           >
-            <h3 className="font-bold text-white text-lg mb-4 uppercase tracking-wide">
+            <h3 className="font-bold text-[var(--theme-text-heading)] text-lg mb-4 uppercase tracking-wide">
               {t("footer.navigation")}
             </h3>
             <ul className="space-y-2">
@@ -249,7 +249,7 @@ export function Footer({ settings }: FooterProps) {
                       type: "spring",
                       stiffness: 300,
                     }}
-                    className="text-gray-400 hover:text-[var(--color-racing-red)] transition-colors duration-300 flex items-center gap-2"
+                    className="text-[var(--theme-text-muted)] hover:text-[var(--color-udg-blue)] transition-colors duration-300 flex items-center gap-2"
                   >
                     {link.label}
                   </motion.a>
@@ -277,7 +277,7 @@ export function Footer({ settings }: FooterProps) {
               delay: 0.3,
             }}
           >
-            <h3 className="font-bold text-white text-lg mb-4 uppercase tracking-wide">
+            <h3 className="font-bold text-[var(--theme-text-heading)] text-lg mb-4 uppercase tracking-wide">
               {t("footer.links")}
             </h3>
             <ul className="space-y-2 mb-6">
@@ -312,7 +312,7 @@ export function Footer({ settings }: FooterProps) {
                       type: "spring",
                       stiffness: 300,
                     }}
-                    className="text-gray-400 hover:text-[var(--color-racing-red)] transition-colors duration-300 flex items-center gap-2"
+                    className="text-[var(--theme-text-muted)] hover:text-[var(--color-udg-blue)] transition-colors duration-300 flex items-center gap-2"
                   >
                     {link.label}
                     {link.external && <ExternalLink size={14} />}
@@ -338,7 +338,7 @@ export function Footer({ settings }: FooterProps) {
               }}
               className="space-y-3 text-sm"
             >
-              <div className="flex items-start gap-2 text-gray-400">
+              <div className="flex items-start gap-2 text-[var(--theme-text-muted)]">
                 <MapPin size={16} className="flex-shrink-0 mt-1" />
                 <span>
                   {t("footer.address")}
@@ -346,7 +346,7 @@ export function Footer({ settings }: FooterProps) {
                   {t("footer.city")}
                 </span>
               </div>
-              <div className="flex items-center gap-2 text-gray-400">
+              <div className="flex items-center gap-2 text-[var(--theme-text-muted)]">
                 <Mail size={16} className="flex-shrink-0" />
                 <motion.a
                   href="mailto:info@udgracingdivision.cat"
@@ -357,7 +357,7 @@ export function Footer({ settings }: FooterProps) {
                     type: "spring",
                     stiffness: 300,
                   }}
-                  className="hover:text-[var(--color-racing-red)] transition-colors duration-300"
+                  className="hover:text-[var(--color-udg-blue)] transition-colors duration-300"
                 >
                   info@udgracingdivision.cat
                 </motion.a>
@@ -384,7 +384,7 @@ export function Footer({ settings }: FooterProps) {
             duration: 0.6,
             delay: 0.7,
           }}
-          className="pt-8 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-sm"
+          className="pt-8 border-t border-[var(--theme-border)] flex flex-col md:flex-row justify-between items-center gap-4 text-[var(--theme-text-muted)] text-sm"
         >
           <p>{t("footer.copyright")}</p>
           <div className="flex gap-6">
@@ -397,7 +397,7 @@ export function Footer({ settings }: FooterProps) {
                 type: "spring",
                 stiffness: 300,
               }}
-              className="hover:text-[var(--color-racing-red)] transition-colors duration-300"
+              className="hover:text-[var(--color-udg-blue)] transition-colors duration-300"
             >
               {t("footer.privacy")}
             </motion.a>
@@ -410,7 +410,7 @@ export function Footer({ settings }: FooterProps) {
                 type: "spring",
                 stiffness: 300,
               }}
-              className="hover:text-[var(--color-racing-red)] transition-colors duration-300"
+              className="hover:text-[var(--color-udg-blue)] transition-colors duration-300"
             >
               {t("footer.terms")}
             </motion.a>
