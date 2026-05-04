@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { motion } from "framer-motion";
 import type { Sponsor } from "../types/api";
-import { ContactModal } from "./ContactModal";
+
 
 interface SponsorCarouselProps {
   sponsors: Sponsor[];
@@ -10,7 +10,6 @@ interface SponsorCarouselProps {
 
 export function SponsorCarousel({ sponsors }: SponsorCarouselProps) {
   const { t } = useLanguage();
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   
   // Use all sponsors for the main carousel
   const mainSponsors = sponsors;
@@ -155,12 +154,6 @@ export function SponsorCarousel({ sponsors }: SponsorCarouselProps) {
           </motion.a>
         </motion.div>
       </div>
-
-      {/* Contact Modal */}
-      <ContactModal
-        isOpen={isContactModalOpen}
-        onClose={() => setIsContactModalOpen(false)}
-      />
     </section>
   );
 }

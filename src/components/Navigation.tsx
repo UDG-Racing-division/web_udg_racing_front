@@ -4,13 +4,12 @@ import { Menu, X } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
-import { ContactModal } from "./ContactModal";
+
 
 export function Navigation() {
   const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -94,14 +93,14 @@ export function Navigation() {
                   <motion.span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--color-udg-blue)] group-hover:w-full transition-all duration-300" />
                 </motion.a>
               ))}
-              <motion.button
-                onClick={() => setIsContactModalOpen(true)}
+              <motion.a
+                href="mailto:info@udgracingdivision.cat"
                 className="px-4 py-2 bg-[var(--color-udg-blue)] hover:bg-[var(--color-udg-blue-light)] text-white font-medium rounded transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 {t("nav.contact")}
-              </motion.button>
+              </motion.a>
               <ThemeToggle />
               <LanguageSwitcher />
             </div>
@@ -180,12 +179,6 @@ export function Navigation() {
           </div>
         </motion.div>
       </motion.nav>
-
-      {/* Contact Modal */}
-      <ContactModal
-        isOpen={isContactModalOpen}
-        onClose={() => setIsContactModalOpen(false)}
-      />
     </>
   );
 }

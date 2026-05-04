@@ -7,7 +7,7 @@ import type { HomeData, Sponsor } from "../types/api";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
 import { LoadingScreen } from "../components/LoadingScreen";
-import { ContactModal } from "../components/ContactModal";
+
 
 function SponsorCard({
   sponsor,
@@ -118,7 +118,6 @@ export function PartnersPage() {
   const { language, t } = useLanguage();
   const [data, setData] = useState<HomeData | null>(null);
   const [loading, setLoading] = useState(true);
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -325,8 +324,8 @@ export function PartnersPage() {
                 <p className="text-[var(--theme-text-muted)] text-lg mb-10 max-w-xl mx-auto">
                   {t("partners.ctaDescription")}
                 </p>
-                <motion.button
-                  onClick={() => setIsContactModalOpen(true)}
+                <motion.a
+                  href="mailto:info@udgracingdivision.cat"
                   className="inline-flex items-center gap-3 px-10 py-5 bg-transparent border-2 border-[var(--color-udg-blue)] text-[var(--theme-text-heading)] font-bold text-lg uppercase tracking-wider overflow-hidden group relative"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -341,18 +340,12 @@ export function PartnersPage() {
                   <span className="relative z-10">
                     {t("sponsors.contact")}
                   </span>
-                </motion.button>
+                </motion.a>
               </motion.div>
             </div>
           </section>
 
           <Footer settings={data?.settings} />
-
-          {/* Contact Modal */}
-          <ContactModal
-            isOpen={isContactModalOpen}
-            onClose={() => setIsContactModalOpen(false)}
-          />
         </div>
       )}
     </>
