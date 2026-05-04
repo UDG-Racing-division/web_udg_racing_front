@@ -123,10 +123,10 @@ export function SponsorCarousel({ sponsors }: SponsorCarouselProps) {
           className="text-center mt-20 px-4"
         >
           <p className="text-[var(--theme-text-muted)] mb-6 text-lg">
-            {t("sponsors.collaborate")}
+            {t("sponsors.page")}
           </p>
-          <motion.button
-            onClick={() => setIsContactModalOpen(true)}
+          <motion.a
+            href="/partners"
             className="inline-flex items-center gap-3 px-10 py-5 bg-transparent border-2 border-[var(--color-udg-blue)] text-[var(--theme-text-heading)] font-bold text-lg uppercase tracking-wider overflow-hidden group relative"
             whileHover={{
               scale: 1.05,
@@ -151,8 +151,8 @@ export function SponsorCarousel({ sponsors }: SponsorCarouselProps) {
                 transformOrigin: "left",
               }}
             />
-            <span className="relative z-10">{t("sponsors.contact")}</span>
-          </motion.button>
+            <span className="relative z-10">{t("sponsors.clickHere")}</span>
+          </motion.a>
         </motion.div>
       </div>
 

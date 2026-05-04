@@ -36,8 +36,9 @@
   "sponsors": {
     "title": "SPONSORS",
     "description": "Thanks to our sponsors who make the project possible",
-    "collaborate": "Want to collaborate with us?",
-    "contact": "Contact us"
+    "page": "Do you want to obtain more information about our sponsors?",
+    "contact": "Contact us",
+    "clickHere": "Click here"
   },
   "partners": {
     "title": "PARTNERS",

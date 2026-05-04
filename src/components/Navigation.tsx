@@ -52,8 +52,8 @@ export function Navigation() {
           stiffness: 100,
         }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-            ? "bg-[var(--theme-bg-nav)] backdrop-blur-md shadow-lg"
-            : "bg-transparent backdrop-blur-sm"
+          ? "bg-[var(--theme-bg-nav)] backdrop-blur-md shadow-lg"
+          : "bg-transparent backdrop-blur-sm"
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,11 +69,13 @@ export function Navigation() {
                 stiffness: 300,
               }}
             >
-              <img
-                src="/logo_udgRacing.png"
-                alt="UdG Racing Division"
-                className="h-12 w-auto"
-              />
+              <a href="/">
+                <img
+                  src="/logo_udgRacing.png"
+                  alt="UdG Racing Division"
+                  className="h-12 w-auto"
+                />
+              </a>
             </motion.div>
 
             {/* Desktop Navigation */}
@@ -164,7 +166,7 @@ export function Navigation() {
                 {link.label}
               </motion.a>
             ))}
-            
+
             {/* Mobile Settings */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}

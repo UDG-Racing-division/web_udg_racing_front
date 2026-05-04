@@ -36,8 +36,9 @@
   "sponsors": {
     "title": "SPONSORS",
     "description": "Gràcies als nostres patrocinadors que fan possible el projecte",
-    "collaborate": "Vols col·laborar amb nosaltres?",
-    "contact": "Contacta'ns"
+    "page": "Vols obtenir més informació sobre els nostres sponsors?",
+    "contact": "Contacta'ns",
+    "clickHere": "Fes clic aquí"
   },
   "partners": {
     "title": "PARTNERS",
