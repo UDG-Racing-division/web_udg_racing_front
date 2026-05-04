@@ -12,25 +12,14 @@ export function SponsorCarousel({ sponsors }: SponsorCarouselProps) {
   const { t } = useLanguage();
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   
-  // Filter sponsors by type
-  const mainSponsors = sponsors.filter((s) =>
-    ["main", "principal", "premium"].includes((s.type || "").toLowerCase())
-  );
-  const secondarySponsors = sponsors.filter(
-    (s) =>
-      !["main", "principal", "premium"].includes((s.type || "").toLowerCase())
-  );
+  // Use all sponsors for the main carousel
+  const mainSponsors = sponsors;
 
-  // Triple the lists for seamless infinite scroll
+  // Triple the list for seamless infinite scroll
   const infiniteMainSponsors = [
     ...mainSponsors,
     ...mainSponsors,
     ...mainSponsors,
-  ];
-  const infiniteSecondarySponsors = [
-    ...secondarySponsors,
-    ...secondarySponsors,
-    ...secondarySponsors,
   ];
 
   return (
@@ -112,50 +101,7 @@ export function SponsorCarousel({ sponsors }: SponsorCarouselProps) {
           </div>
         )}
 
-        {/* Secondary Sponsors Carousel */}
-        {secondarySponsors.length > 0 && (
-          <div className="relative">
-            <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, var(--theme-fade-color), transparent)' }} />
-            <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, var(--theme-fade-color), transparent)' }} />
 
-            <div className="overflow-hidden py-6">
-              <motion.div
-                className="flex gap-12 items-center"
-                animate={{
-                  x: [`-${secondarySponsors.length * (192 + 48)}px`, `0px`],
-                }}
-                transition={{
-                  x: {
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    duration: secondarySponsors.length * 4,
-                    ease: "linear",
-                  },
-                }}
-              >
-                {infiniteSecondarySponsors.map((sponsor, index) => (
-                  <motion.a
-                    key={`secondary-${index}`}
-                    href={sponsor.website || "#"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-shrink-0 group"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                  >
-                    <div className="w-48 h-28 flex items-center justify-center p-5 bg-zinc-900/50 border border-zinc-800 group-hover:border-[var(--color-udg-blue)] transition-all duration-300 rounded-lg shadow-sm">
-                      <img
-                        src={sponsor.logo}
-                        alt={sponsor.name}
-                        className="max-w-full max-h-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
-                      />
-                    </div>
-                  </motion.a>
-                ))}
-              </motion.div>
-            </div>
-          </div>
-        )}
 
         {/* CTA */}
         <motion.div

@@ -39,6 +39,22 @@
     "collaborate": "¿Quieres colaborar con nosotros?",
     "contact": "Contáctanos"
   },
+  "partners": {
+    "title": "PARTNERS",
+    "description": "Empresas y organizaciones que hacen posible nuestro proyecto y comparten nuestra pasión por la ingeniería y el motorsport.",
+    "backHome": "Volver al inicio",
+    "totalPartners": "Partners totales",
+    "levelFirst": "Patrocinadores principales",
+    "levelFirstDesc": "Nuestros partners estratégicos que lideran el apoyo al equipo",
+    "levelSecond": "Patrocinadores",
+    "levelSecondDesc": "Empresas que apoyan nuestro proyecto",
+    "levelThird": "Colaboradores",
+    "levelThirdDesc": "Partners que contribuyen al desarrollo del proyecto",
+    "levelFourth": "Facultad",
+    "levelFourthDesc": "Instituciones académicas que nos apoyan",
+    "ctaTitle": "¿QUIERES SER PARTNER?",
+    "ctaDescription": "Únete a las empresas que apoyan la formación de los ingenieros del futuro y la innovación en el motorsport."
+  },
   "news": {
     "title": "NOTICIAS",
     "description": "Mantente al día con nuestras últimas novedades y éxitos",

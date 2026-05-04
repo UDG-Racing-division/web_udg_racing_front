@@ -39,6 +39,22 @@
     "collaborate": "Want to collaborate with us?",
     "contact": "Contact us"
   },
+  "partners": {
+    "title": "PARTNERS",
+    "description": "Companies and organizations that make our project possible and share our passion for engineering and motorsport.",
+    "backHome": "Back to home",
+    "totalPartners": "Total partners",
+    "levelFirst": "Main Sponsors",
+    "levelFirstDesc": "Our strategic partners who lead the support for the team",
+    "levelSecond": "Sponsors",
+    "levelSecondDesc": "Companies that support our project",
+    "levelThird": "Collaborators",
+    "levelThirdDesc": "Partners who contribute to the development of the project",
+    "levelFourth": "Faculty",
+    "levelFourthDesc": "Academic institutions supporting us",
+    "ctaTitle": "WANT TO BE A PARTNER?",
+    "ctaDescription": "Join the companies that support the training of future engineers and innovation in motorsport."
+  },
   "news": {
     "title": "NEWS",
     "description": "Stay up to date with our latest news and achievements",
