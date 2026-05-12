@@ -51,15 +51,7 @@ function SponsorCard({
           }`}
         />
 
-        {/* Main badge for premium sponsors */}
-        {isMain && (
-          <div className="absolute top-4 right-4 z-10">
-            <div className="flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-[var(--color-udg-blue)] to-[var(--color-udg-blue-light)] text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-md">
-              <Crown size={12} />
-              <span>Premium</span>
-            </div>
-          </div>
-        )}
+
 
         <div
           className={`flex items-center justify-center flex-grow ${
@@ -231,10 +223,11 @@ export function PartnersPage() {
                       {levelFirstSponsors.length}
                     </span>
                     <p className="text-sm text-[var(--theme-text-muted)] mt-1 uppercase tracking-wider">
-                      Premium
+                      {t("partners.mainPartners")}
                     </p>
                   </div>
                 )}
+
               </motion.div>
             </div>
           </section>
