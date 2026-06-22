@@ -26,7 +26,7 @@ export function Navigation() {
   const navLinks = [
     { label: t("nav.team"), href: "#team" },
     { label: t("nav.news"), href: "#news" },
-    { label: t("nav.sponsors"), href: "#sponsors" },
+    { label: t("nav.sponsors"), href: "/partners" },
   ];
   return (
     <>
