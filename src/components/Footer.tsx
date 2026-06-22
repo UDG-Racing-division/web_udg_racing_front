@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { motion, useInView } from "framer-motion";
-import { Instagram, Linkedin, Mail, MapPin, ExternalLink } from "lucide-react";
+import { Instagram, Linkedin, Mail, MapPin, ExternalLink, Youtube } from "lucide-react";
 // TikTok SVG icon component (lucide-react doesn't have TikTok)
 function TikTokIcon({ size = 20 }: { size?: number }) {
   return (
@@ -64,6 +64,11 @@ export function Footer({ settings }: FooterProps) {
       icon: TikTokIcon,
       href: "https://www.tiktok.com/@udgracingdivision",
       label: "TikTok",
+    },
+    {
+      icon: Youtube,
+      href: "https://www.youtube.com/@UdGRacingDivision",
+      label: "YouTube",
     },
     {
       icon: Linkedin,
