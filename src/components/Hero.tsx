@@ -150,12 +150,7 @@ export function Hero({ settings }: HeroProps) {
           }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <MagneticButton
-            onClick={scrollToContent}
-            className="px-8 py-4 bg-[var(--color-udg-blue)] text-white font-bold text-lg rounded-none hover:bg-[var(--color-udg-blue-light)] transition-colors duration-300 uppercase tracking-wide glow-blue cursor-pointer"
-          >
-            {t("hero.discoverMore")}
-          </MagneticButton>
+
           <MagneticButton
             href="#team"
             className="px-8 py-4 border-2 border-[var(--color-udg-blue)] text-[var(--theme-text-heading)] font-bold text-lg rounded-none hover:bg-[var(--color-udg-blue)] hover:text-white transition-all duration-300 uppercase tracking-wide cursor-pointer"
