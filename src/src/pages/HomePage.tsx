@@ -9,13 +9,13 @@ import { SponsorCarousel } from '../components/SponsorCarousel';
 import { Footer } from '../components/Footer';
 export function HomePage() {
   return <div className="w-full min-h-screen bg-black">
-      <Navigation />
-      <Hero />
-      <StatsSection />
-      <AboutSection />
-      <TeamSection />
-      <NewsSection />
-      <SponsorCarousel />
-      <Footer />
-    </div>;
+    <Navigation />
+    <Hero />
+    <StatsSection />
+    <AboutSection />
+    <TeamSection />
+    <SponsorCarousel />
+    <NewsSection />
+    <Footer />
+  </div>;
 }
