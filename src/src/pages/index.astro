@@ -11,17 +11,26 @@ import { TeamSection } from '../../components/TeamSection';
 import { NewsSection } from '../../components/NewsSection';
 import { SponsorCarousel } from '../../components/SponsorCarousel';
 import { Footer } from '../../components/Footer';
+
+import { apiService } from '../../services/api';
+
+let data = null;
+try {
+  data = await apiService.getHomeData('ca');
+} catch (error) {
+  console.error("Error fetching home data in Astro:", error);
+}
 ---
 
 <Layout>
   <div class="w-full min-h-screen bg-black">
     <Navigation client:load />
-    <Hero client:load />
-    <StatsSection client:load />
-    <AboutSection client:load />
-    <TeamSection client:load />
-    <SponsorCarousel client:load />
-    <NewsSection client:load />
-    <Footer client:load />
+    <Hero settings={data?.settings} client:load />
+    <StatsSection stats={data?.stats || []} client:load />
+    <AboutSection settings={data?.settings} client:load />
+    <TeamSection settings={data?.settings} client:load />
+    <SponsorCarousel sponsors={data?.sponsors || []} client:load />
+    <NewsSection news={data?.news || []} client:load />
+    <Footer settings={data?.settings} client:load />
   </div>
 </Layout>
