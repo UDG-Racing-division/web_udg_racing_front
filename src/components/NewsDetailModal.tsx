@@ -61,26 +61,36 @@ export function NewsDetailModal({ news, onClose }: NewsDetailModalProps) {
 
           {/* Image Gallery */}
           {allImages.length > 0 && (
-            <div className="relative w-full h-96 bg-[var(--theme-bg-section)]">
-              <img
-                src={allImages[currentImageIndex].image}
-                alt={translate(news.title)}
-                className="w-full h-full object-contain"
-              />
+            <div className="relative w-full overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={currentImageIndex}
+                  src={allImages[currentImageIndex].image}
+                  alt={translate(news.title)}
+                  className="w-full h-auto block"
+                  initial={{ opacity: 0, x: 40 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -40 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                />
+              </AnimatePresence>
+
+              {/* Subtle gradient overlay at bottom for indicators readability */}
+              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
 
               {allImages.length > 1 && (
                 <>
                   <button
                     onClick={prevImage}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-[var(--theme-bg-card)]/80 hover:bg-[var(--theme-bg-card)] rounded-full transition-colors shadow"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-black/40 hover:bg-black/60 rounded-full transition-colors shadow backdrop-blur-sm"
                   >
-                    <ChevronLeft size={24} className="text-[var(--theme-text-heading)]" />
+                    <ChevronLeft size={24} className="text-white" />
                   </button>
                   <button
                     onClick={nextImage}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-[var(--theme-bg-card)]/80 hover:bg-[var(--theme-bg-card)] rounded-full transition-colors shadow"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-black/40 hover:bg-black/60 rounded-full transition-colors shadow backdrop-blur-sm"
                   >
-                    <ChevronRight size={24} className="text-[var(--theme-text-heading)]" />
+                    <ChevronRight size={24} className="text-white" />
                   </button>
 
                   {/* Image indicators */}
@@ -89,10 +99,11 @@ export function NewsDetailModal({ news, onClose }: NewsDetailModalProps) {
                       <button
                         key={index}
                         onClick={() => setCurrentImageIndex(index)}
-                        className={`w-2 h-2 rounded-full transition-all ${index === currentImageIndex
-                            ? "bg-[var(--color-udg-blue)] w-8"
-                            : "bg-white/50"
-                          }`}
+                        className={`h-2 rounded-full transition-all duration-300 ${
+                          index === currentImageIndex
+                            ? "bg-white w-8"
+                            : "bg-white/40 w-2 hover:bg-white/70"
+                        }`}
                       />
                     ))}
                   </div>

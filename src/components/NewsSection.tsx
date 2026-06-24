@@ -191,12 +191,12 @@ function HorizontalNewsCard({
           delay: 0.2,
           ease: [0.22, 1, 0.36, 1],
         }}
-        className="relative aspect-[4/3] overflow-hidden"
+        className="relative overflow-hidden"
       >
         <img
           src={item.image}
           alt={translate(item.title)}
-          className="w-full h-full object-contain"
+          className="w-full h-auto block"
         />
 
         {/* Overlay gradient */}
