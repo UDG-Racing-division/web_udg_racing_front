@@ -61,13 +61,13 @@ export function NewsDetailModal({ news, onClose }: NewsDetailModalProps) {
 
           {/* Image Gallery */}
           {allImages.length > 0 && (
-            <div className="relative w-full overflow-hidden">
+            <div className="relative w-full overflow-hidden bg-[var(--theme-bg-section)]" style={{ maxHeight: "70vh" }}>
               <AnimatePresence mode="wait">
                 <motion.img
                   key={currentImageIndex}
                   src={allImages[currentImageIndex].image}
                   alt={translate(news.title)}
-                  className="w-full h-auto block"
+                  className="w-full h-auto block max-h-[70vh] object-contain mx-auto"
                   initial={{ opacity: 0, x: 40 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -40 }}
