@@ -13,6 +13,10 @@ export function NewsSection({ news }: NewsSectionProps) {
   const { translate, t } = useLanguage();
   const sectionRef = useRef(null);
   const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
+
+  // Only show the latest news item
+  const latestNews = news.length > 0 ? [news[0]] : [];
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end end"],
@@ -24,7 +28,7 @@ export function NewsSection({ news }: NewsSectionProps) {
       ref={sectionRef}
       className="relative bg-[var(--theme-bg-section)]"
       style={{
-        height: `${news.length * 100}vh`,
+        height: `${latestNews.length * 100}vh`,
       }}
     >
       {/* Sticky container */}
@@ -57,35 +61,25 @@ export function NewsSection({ news }: NewsSectionProps) {
           <div className="w-24 h-1 bg-gradient-blue" />
         </motion.div>
 
-        {/* Progress indicator */}
-        <div className="absolute top-12 right-4 sm:right-8 lg:right-16 z-20 flex items-center gap-2">
-          {news.map((_, index) => {
-            const start = index / news.length;
-            const end = (index + 1) / news.length;
-            const opacity = useTransform(
-              scrollYProgress,
-              [start, start + 0.01, end - 0.01, end],
-              [0.3, 1, 1, 0.3]
-            );
-            return (
-              <motion.div
-                key={index}
-                className="w-8 h-1 bg-[var(--theme-text-subtle)]"
-                style={{
-                  opacity,
-                }}
-              />
-            );
-          })}
-        </div>
+        {/* "See all news" link */}
+        <motion.a
+          href="/news"
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="absolute top-14 right-4 sm:right-8 lg:right-16 z-20 inline-flex items-center gap-2 text-sm font-medium text-[var(--color-udg-blue)] hover:text-[var(--color-udg-blue-light)] transition-colors group"
+        >
+          {t("news.allNews")}
+          <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-200" />
+        </motion.a>
 
         {/* News cards stack */}
         <div className="relative w-full h-full">
-          {news.map((item, index) => {
-            const start = index / news.length;
-            const end = (index + 1) / news.length;
-            const isLast = index === news.length - 1;
-            // Current card opacity and scale
+          {latestNews.map((item, index) => {
+            const start = index / latestNews.length;
+            const end = (index + 1) / latestNews.length;
+            const isLast = index === latestNews.length - 1;
             const opacity = useTransform(
               scrollYProgress,
               isLast
@@ -231,7 +225,7 @@ function HorizontalNewsCard({
         </div>
 
         {/* Title */}
-        <h3 className="font-racing text-4xl sm:text-5xl md:text-6xl text-[var(--theme-text-heading)] leading-tight">
+        <h3 className="font-racing text-2xl sm:text-3xl md:text-4xl text-[var(--theme-text-heading)] leading-tight">
           {translate(item.title)}
         </h3>
 
@@ -267,12 +261,7 @@ function HorizontalNewsCard({
           </motion.div>
         </motion.span>
 
-        {/* Number indicator */}
-        <div className="pt-8 border-t border-[var(--theme-border)]">
-          <span className="font-racing text-6xl text-[var(--theme-bg-muted)]">
-            {String(index + 1).padStart(2, "0")}
-          </span>
-        </div>
+
       </motion.div>
     </div>
   );

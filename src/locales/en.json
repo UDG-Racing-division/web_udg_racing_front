@@ -61,7 +61,11 @@
     "title": "NEWS",
     "description": "Stay up to date with our latest news and achievements",
     "readMore": "Read more",
-    "loadMore": "See more news"
+    "loadMore": "See more news",
+    "total": "news",
+    "empty": "No news published yet.",
+    "latestNews": "LATEST NEWS",
+    "allNews": "See all news"
   },
   "footer": {
     "description": "University of Girona racing team dedicated to innovation in motorsport.",

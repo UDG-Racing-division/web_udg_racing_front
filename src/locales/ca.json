@@ -61,7 +61,11 @@
     "title": "NOTÍCIES",
     "description": "Mantén-te al dia amb les nostres últimes novetats i èxits",
     "readMore": "Llegir més",
-    "loadMore": "Veure més notícies"
+    "loadMore": "Veure més notícies",
+    "total": "notícies",
+    "empty": "Encara no hi ha notícies publicades.",
+    "latestNews": "ÚLTIMES NOTÍCIES",
+    "allNews": "Veure totes les notícies"
   },
   "footer": {
     "description": "Equip de competició de la Universitat de Girona dedicat a la innovació en motorsport.",
