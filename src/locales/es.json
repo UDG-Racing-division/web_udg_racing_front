@@ -5,7 +5,8 @@
     "team": "Equipo",
     "sponsors": "Patrocinadores",
     "news": "Noticias",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "mailTooltip": "Se abrirá tu cliente de correo"
   },
   "hero": {
     "title": "UDG RACING",
@@ -31,7 +32,13 @@
     "title": "EL EQUIPO",
     "description": "Somos un equipo multidisciplinar de la Universidad de Girona, enfocados en un único objetivo: construir un monoplaza y competir. Cada temporada es un reto para superar límites técnicos y mejorar nuestro rendimiento en pista. ¡Contacta con nosotros y forma parte de nuestro equipo!",
     "current": "Equipo actual",
-    "alumni": "Antiguos miembros"
+    "alumni": "Antiguos miembros",
+    "pageTitle": "EL EQUIPO",
+    "pageSubtitle": "Conoce a las personas detrás de UdG Racing Division",
+    "whoWeAre": "QUIÉNES SOMOS",
+    "meetTeam": "Conoce al equipo",
+    "backHome": "Volver al inicio",
+    "noMembers": "Pronto se publicarán los miembros del equipo."
   },
   "sponsors": {
     "title": "SPONSORS",
@@ -50,10 +57,12 @@
     "levelFirstDesc": "Nuestros partners estratégicos que lideran el apoyo al equipo",
     "levelSecond": "Patrocinadores",
     "levelSecondDesc": "Empresas que apoyan nuestro proyecto",
-    "levelThird": "Colaboradores",
+    "levelThird": "Proveedores",
     "levelThirdDesc": "Partners que contribuyen al desarrollo del proyecto",
-    "levelFourth": "Facultad",
-    "levelFourthDesc": "Instituciones académicas que nos apoyan",
+    "levelFourth": "Software",
+    "levelFourthDesc": "Herramientas y plataformas de software que nos apoyan",
+    "levelFifth": "Facultad",
+    "levelFifthDesc": "Instituciones académicas que nos apoyan",
     "ctaTitle": "¿QUIERES SER PARTNER?",
     "ctaDescription": "Únete a las empresas que apoyan la formación de los ingenieros del futuro y la innovación en el motorsport."
   },

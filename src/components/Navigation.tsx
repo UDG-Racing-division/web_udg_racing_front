@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Mail } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
@@ -24,7 +24,7 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   const navLinks = [
-    { label: t("nav.team"), href: "#team" },
+    { label: t("nav.team"), href: "/team" },
     { label: t("nav.news"), href: "/news" },
     { label: t("nav.sponsors"), href: "/partners" },
   ];
@@ -56,17 +56,12 @@ export function Navigation() {
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
+          <div className="relative flex items-center h-20">
+            {/* Logo – left */}
             <motion.div
-              className="flex items-center"
-              whileHover={{
-                scale: 1.05,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 300,
-              }}
+              className="flex items-center flex-shrink-0"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
             >
               <a href="/">
                 <img
@@ -77,8 +72,8 @@ export function Navigation() {
               </a>
             </motion.div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            {/* Desktop Nav – absolutely centered */}
+            <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center space-x-8">
               {navLinks.map((link, index) => (
                 <motion.a
                   key={link.label}
@@ -93,14 +88,28 @@ export function Navigation() {
                   <motion.span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--color-udg-blue)] group-hover:w-full transition-all duration-300" />
                 </motion.a>
               ))}
-              <motion.a
-                href="mailto:info@udgracingdivision.cat"
-                className="px-4 py-2 bg-[var(--color-udg-blue)] hover:bg-[var(--color-udg-blue-light)] text-white font-medium rounded transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {t("nav.contact")}
-              </motion.a>
+            </div>
+
+            {/* Right side – contact + icons */}
+            <div className="hidden md:flex items-center space-x-4 flex-shrink-0 ml-auto">
+              <div className="relative group/contact">
+                <motion.a
+                  href="mailto:info@udgracingdivision.cat"
+                  className="px-4 py-2 bg-[var(--color-udg-blue)] hover:bg-[var(--color-udg-blue-light)] text-white font-medium rounded transition-colors flex items-center gap-2"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Mail size={15} />
+                  {t("nav.contact")}
+                </motion.a>
+                {/* Tooltip */}
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 pointer-events-none opacity-0 group-hover/contact:opacity-100 transition-opacity duration-200 z-50">
+                  <div className="bg-[var(--theme-bg-section)] border border-[var(--theme-border)] text-[var(--theme-text-muted)] text-xs rounded px-3 py-2 whitespace-nowrap shadow-lg">
+                    <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-[var(--theme-bg-section)] border-l border-t border-[var(--theme-border)] rotate-45" />
+                    📧 {t("nav.mailTooltip")}
+                  </div>
+                </div>
+              </div>
               <ThemeToggle />
               <LanguageSwitcher />
             </div>

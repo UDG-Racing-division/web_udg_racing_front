@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Navigation } from "../components/Navigation";
 import { Hero } from "../components/Hero";
 import { StatsSection } from "../components/StatsSection";
-import { AboutSection } from "../components/AboutSection";
 import { TeamSection } from "../components/TeamSection";
 import { NewsSection } from "../components/NewsSection";
 import { SponsorCarousel } from "../components/SponsorCarousel";
@@ -41,7 +40,6 @@ export function HomePage() {
         <div className="w-full min-h-screen bg-[var(--theme-bg-page)]">
           <Navigation />
           <Hero settings={data?.settings} />
-          <AboutSection settings={data?.settings} />
           <StatsSection stats={data?.stats || []} />
           <TeamSection settings={data?.settings} />
           <SponsorCarousel sponsors={data?.sponsors || []} />

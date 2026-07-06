@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, ExternalLink, Crown, Star, Award, Building } from "lucide-react";
+import { ArrowLeft, ExternalLink, Crown, Star, Award, Building, Cpu } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { apiService } from "../services/api";
 import type { HomeData, Sponsor } from "../types/api";
@@ -129,12 +129,10 @@ export function PartnersPage() {
 
   const sponsors = data?.sponsors || [];
   const levelFirstSponsors = sponsors.filter((s) => (s.type || "").toLowerCase() === "first");
-  const levelSecondSponsors = sponsors.filter((s) => {
-    const type = (s.type || "").toLowerCase();
-    return type === "second" || (type !== "first" && type !== "third" && type !== "fourth");
-  });
+  const levelSecondSponsors = sponsors.filter((s) => (s.type || "").toLowerCase() === "second");
   const levelThirdSponsors = sponsors.filter((s) => (s.type || "").toLowerCase() === "third");
   const levelFourthSponsors = sponsors.filter((s) => (s.type || "").toLowerCase() === "fourth");
+  const levelFifthSponsors = sponsors.filter((s) => (s.type || "").toLowerCase() === "fifth");
 
   return (
     <>
@@ -202,33 +200,7 @@ export function PartnersPage() {
                 </p>
               </motion.div>
 
-              {/* Stats */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="flex gap-10 mt-12"
-              >
-                <div>
-                  <span className="text-3xl font-bold text-[var(--color-udg-blue)]">
-                    {sponsors.length}
-                  </span>
-                  <p className="text-sm text-[var(--theme-text-muted)] mt-1 uppercase tracking-wider">
-                    {t("partners.totalPartners")}
-                  </p>
-                </div>
-                {levelFirstSponsors.length > 0 && (
-                  <div>
-                    <span className="text-3xl font-bold text-[var(--color-udg-blue)]">
-                      {levelFirstSponsors.length}
-                    </span>
-                    <p className="text-sm text-[var(--theme-text-muted)] mt-1 uppercase tracking-wider">
-                      {t("partners.mainPartners")}
-                    </p>
-                  </div>
-                )}
 
-              </motion.div>
             </div>
           </section>
 
@@ -292,7 +264,8 @@ export function PartnersPage() {
                 {renderSection(levelFirstSponsors, "partners.levelFirst", "partners.levelFirstDesc", <Crown size={20} />, true, "bg-[var(--theme-bg-section)]")}
                 {renderSection(levelSecondSponsors, "partners.levelSecond", "partners.levelSecondDesc", <Star size={20} />, false, "bg-[var(--theme-bg-page)]")}
                 {renderSection(levelThirdSponsors, "partners.levelThird", "partners.levelThirdDesc", <Award size={20} />, false, "bg-[var(--theme-bg-section)]")}
-                {renderSection(levelFourthSponsors, "partners.levelFourth", "partners.levelFourthDesc", <Building size={20} />, false, "bg-[var(--theme-bg-page)]")}
+                {renderSection(levelFourthSponsors, "partners.levelFourth", "partners.levelFourthDesc", <Cpu size={20} />, false, "bg-[var(--theme-bg-page)]")}
+                {renderSection(levelFifthSponsors, "partners.levelFifth", "partners.levelFifthDesc", <Building size={20} />, false, "bg-[var(--theme-bg-section)]")}
               </>
             );
           })()}

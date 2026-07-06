@@ -100,7 +100,7 @@ export function Footer({ settings }: FooterProps) {
       className="bg-[var(--theme-bg-page)] border-t border-[var(--theme-border)] py-16"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Logo and description */}
           <motion.div
             initial={{
@@ -200,67 +200,6 @@ export function Footer({ settings }: FooterProps) {
                 </motion.a>
               ))}
             </div>
-          </motion.div>
-
-          {/* Quick links */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 30,
-            }}
-            animate={
-              isInView
-                ? {
-                  opacity: 1,
-                  y: 0,
-                }
-                : {}
-            }
-            transition={{
-              duration: 0.6,
-              delay: 0.2,
-            }}
-          >
-            <h3 className="font-bold text-[var(--theme-text-heading)] text-lg mb-4 uppercase tracking-wide">
-              {t("footer.navigation")}
-            </h3>
-            <ul className="space-y-2">
-              {quickLinks.map((link, index) => (
-                <motion.li
-                  key={link.label}
-                  initial={{
-                    opacity: 0,
-                    x: -10,
-                  }}
-                  animate={
-                    isInView
-                      ? {
-                        opacity: 1,
-                        x: 0,
-                      }
-                      : {}
-                  }
-                  transition={{
-                    duration: 0.4,
-                    delay: 0.3 + index * 0.05,
-                  }}
-                >
-                  <motion.a
-                    href={link.href}
-                    whileHover={{
-                      x: 5,
-                    }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 300,
-                    }}
-                    className="text-[var(--theme-text-muted)] hover:text-[var(--color-udg-blue)] transition-colors duration-300 flex items-center gap-2"
-                  >
-                    {link.label}
-                  </motion.a>
-                </motion.li>
-              ))}
-            </ul>
           </motion.div>
 
           {/* External links & Contact */}

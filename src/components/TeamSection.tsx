@@ -95,6 +95,23 @@ export function TeamSection({ settings }: TeamSectionProps) {
                 className="h-1 bg-gradient-to-r from-[var(--color-udg-blue)] to-transparent"
                 style={{ transformOrigin: "left" }}
               />
+
+              {/* CTA to team page */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+              >
+                <motion.a
+                  href="/team"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-[var(--color-udg-blue)] text-white font-bold text-lg uppercase tracking-wide"
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  {t("team.meetTeam")}
+                </motion.a>
+              </motion.div>
             </motion.div>
           </div>
         </motion.div>
