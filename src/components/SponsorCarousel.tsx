@@ -86,11 +86,11 @@ export function SponsorCarousel({ sponsors }: SponsorCarouselProps) {
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
                   >
-                    <div className="w-80 h-48 flex items-center justify-center p-8 bg-zinc-900/50 border border-zinc-800 group-hover:border-[var(--color-udg-blue)] transition-all duration-300 rounded-xl shadow-sm">
+                    <div className="w-80 h-48 flex items-center justify-center p-8 bg-gray-300/80 border border-gray-400/50 group-hover:border-[var(--color-udg-blue)] transition-all duration-300 rounded-xl shadow-sm">
                       <img
                         src={sponsor.logo}
                         alt={sponsor.name}
-                        className="max-w-full max-h-full object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                        className="max-w-full max-h-full object-contain transition-all duration-300"
                       />
                     </div>
                   </motion.a>

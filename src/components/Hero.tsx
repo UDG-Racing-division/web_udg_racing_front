@@ -131,8 +131,7 @@ export function Hero({ settings }: HeroProps) {
           }}
           className="text-xl sm:text-2xl text-[var(--theme-text-body)] mb-12 max-w-2xl mx-auto"
         >
-          {translate(settings?.hero_subtitle) ||
-            "Per Scratch. Enginyeria i velocitat des de la Universitat de Girona."}
+          {translate(settings?.hero_subtitle) || t("hero.description")}
         </motion.p>
 
         <motion.div

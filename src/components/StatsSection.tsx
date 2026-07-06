@@ -23,7 +23,7 @@ export function StatsSection({ stats }: StatsSectionProps) {
     <section
       id="stats"
       ref={ref}
-      className="py-24 bg-[var(--theme-bg-page)] relative overflow-hidden"
+      className="py-32 bg-[var(--theme-bg-page)] relative overflow-hidden"
     >
       {/* Animated background elements */}
       <motion.div
@@ -102,7 +102,7 @@ export function StatsSection({ stats }: StatsSectionProps) {
           />
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -140,7 +140,7 @@ export function StatsSection({ stats }: StatsSectionProps) {
                       stiffness: 300,
                     }}
                   >
-                    <div className="bg-[var(--theme-bg-section)] border-2 border-[var(--theme-border)] p-4 sm:p-8 text-center group-hover:border-[var(--color-udg-blue)] transition-colors duration-300 relative overflow-hidden">
+                    <div className="bg-[var(--theme-bg-section)] border-2 border-[var(--theme-border)] p-8 sm:p-12 text-center group-hover:border-[var(--color-udg-blue)] transition-colors duration-300 relative overflow-hidden">
                       {/* Animated background on hover */}
                       <motion.div
                         className="absolute inset-0 bg-gradient-to-br from-[var(--color-udg-blue)]/10 to-transparent opacity-0 group-hover:opacity-100"
@@ -150,11 +150,11 @@ export function StatsSection({ stats }: StatsSectionProps) {
                       />
 
                       <div className="relative z-10">
-                        <div className="font-racing text-3xl sm:text-5xl md:text-6xl text-[var(--theme-text-heading)] mb-2 break-words">
+                        <div className="font-racing text-6xl sm:text-7xl md:text-8xl text-[var(--theme-text-heading)] mb-3 break-words">
                           <AnimatedCounter value={stat.value} />
                         </div>
                         <motion.div
-                          className="text-[var(--color-udg-blue)] font-bold text-base sm:text-xl mb-2 flex items-center justify-center gap-2"
+                          className="text-[var(--color-udg-blue)] font-bold text-lg sm:text-2xl mb-3 flex items-center justify-center gap-2"
                           whileHover={{
                             scale: 1.1,
                           }}
@@ -164,7 +164,7 @@ export function StatsSection({ stats }: StatsSectionProps) {
                             <ExternalLink size={16} className="opacity-50" />
                           )}
                         </motion.div>
-                        <div className="text-[var(--theme-text-muted)] uppercase tracking-wide text-sm">
+                        <div className="text-[var(--theme-text-muted)] uppercase tracking-widest text-sm sm:text-base">
                           {translate(stat.label)}
                         </div>
                       </div>
@@ -187,15 +187,15 @@ export function StatsSection({ stats }: StatsSectionProps) {
                   </motion.a>
                 ) : (
                   <div className="relative block">
-                    <div className="bg-[var(--theme-bg-section)] border-2 border-[var(--theme-border)] p-4 sm:p-8 text-center relative overflow-hidden">
+                    <div className="bg-[var(--theme-bg-section)] border-2 border-[var(--theme-border)] p-8 sm:p-12 text-center relative overflow-hidden">
                       <div className="relative z-10">
-                        <div className="font-racing text-3xl sm:text-5xl md:text-6xl text-[var(--theme-text-heading)] mb-2 break-words">
+                        <div className="font-racing text-6xl sm:text-7xl md:text-8xl text-[var(--theme-text-heading)] mb-3 break-words">
                           <AnimatedCounter value={stat.value} />
                         </div>
-                        <div className="text-[var(--color-udg-blue)] font-bold text-base sm:text-xl mb-2">
+                        <div className="text-[var(--color-udg-blue)] font-bold text-lg sm:text-2xl mb-3">
                           {translate(stat.unit)}
                         </div>
-                        <div className="text-[var(--theme-text-muted)] uppercase tracking-wide text-sm">
+                        <div className="text-[var(--theme-text-muted)] uppercase tracking-widest text-sm sm:text-base">
                           {translate(stat.label)}
                         </div>
                       </div>

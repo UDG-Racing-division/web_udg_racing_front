@@ -10,26 +10,26 @@
   "hero": {
     "title": "UDG RACING",
     "subtitle": "DIVISION",
-    "description": "Ingeniería y velocidad desde la Universidad de Girona.",
+    "description": "El equipo de competición automotriz de la Universidad de Girona.",
     "discoverMore": "Descubre más",
     "meetTeam": "Conoce el equipo"
   },
   "about": {
     "title": "QUIÉNES SOMOS",
-    "heading": "UDG Racing Division es el equipo de competición de la Universidad de Girona dedicado a la innovación en motorsport monoplaza.",
-    "paragraph1": "Somos un equipo multidisciplinario de estudiantes y profesionales unidos por la pasión por la ingeniería y la velocidad. Cada temporada es un reto nuevo para superar límites técnicos y mejorar nuestro rendimiento en pista.",
-    "paragraph2": "Diseñamos, construimos y competimos con vehículos de carreras que combinan rendimiento, eficiencia y sostenibilidad. Nuestro objetivo es formar la próxima generación de ingenieros del motorsport mientras empujamos los límites de la tecnología.",
-    "paragraph3": "Trabajamos en ingeniería mecánica, electrónica, aerodinámica, diseño y gestión de proyectos. Cada miembro aporta sus habilidades únicas para crear un vehículo competitivo que representa la excelencia de la UdG.",
+    "heading": "UdG Racing Division es el equipo de competición de la Universidad de Girona dedicado a la innovación en el motorsport.",
+    "paragraph1": "Somos un equipo multidisciplinar de estudiantes de la Universidad de Girona decididos a competir en la Formula Student. Diseñamos, construimos y competimos con un monoplaza que combina rendimiento y eficiencia. Queremos formar a la próxima generación de ingenieros del motorsport mientras impulsamos los límites de la tecnología.",
+    "paragraph2": "Para alcanzar nuestro objetivo trabajamos en ingeniería mecánica, electrónica, aerodinámica, diseño y gestión de proyectos. Cada miembro aporta sus habilidades únicas para crear un vehículo competitivo capaz de representar la excelencia de este equipo.",
+    "paragraph3": "",
     "ctaButton": "Conoce el equipo",
     "yearsLabel": "Años",
     "membersLabel": "Miembros"
   },
   "stats": {
-    "title": "RENDIMIENTO"
+    "title": "ESTADÍSTICAS DEL EQUIPO"
   },
   "team": {
     "title": "EL EQUIPO",
-    "description": "Somos un equipo multidisciplinario de estudiantes y profesionales unidos por la pasión por la ingeniería y la velocidad. Cada temporada es un reto nuevo para superar límites técnicos y mejorar nuestro rendimiento en pista.",
+    "description": "Somos un equipo multidisciplinar de la Universidad de Girona, enfocados en un único objetivo: construir un monoplaza y competir. Cada temporada es un reto para superar límites técnicos y mejorar nuestro rendimiento en pista. ¡Contacta con nosotros y forma parte de nuestro equipo!",
     "current": "Equipo actual",
     "alumni": "Antiguos miembros"
   },
@@ -113,7 +113,7 @@
     "questions": [
       {
         "question": "¿Quién puede formar parte del equipo?",
-        "answer": "Cualquier estudiante de la UdG motivado puede unirse. Buscamos perfiles de ingeniería, economía, comunicación y más."
+        "answer": "El equipo está abierto a todos los estudiantes de la Universidad de Girona y de los centros asociados. Si todavía no cuentas con la experiencia necesaria para desarrollar todas las tareas, puedes formar parte de la UdG Racing Academy, que te permitirá adquirir los conocimientos necesarios."
       },
       {
         "question": "¿Cómo puedo patrocinar al equipo?",
