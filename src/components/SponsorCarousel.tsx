@@ -63,9 +63,9 @@ export function SponsorCarousel({ sponsors }: SponsorCarouselProps) {
 
             <div className="overflow-hidden py-8">
               <motion.div
-                className="flex gap-20 items-center"
+                className="flex gap-8 items-center"
                 animate={{
-                  x: [`0px`, `-${mainSponsors.length * (320 + 80)}px`],
+                  x: [`0px`, `-${mainSponsors.length * (320 + 32)}px`],
                 }}
                 transition={{
                   x: {

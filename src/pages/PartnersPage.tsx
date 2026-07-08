@@ -64,7 +64,7 @@ function SponsorCard({
             className={`max-w-full object-contain transition-all duration-500 ${
               isMain
                 ? "max-h-40 opacity-90 group-hover:opacity-100 group-hover:scale-105"
-                : "max-h-24 opacity-70 group-hover:opacity-100 group-hover:scale-110"
+                : "max-h-24 opacity-100 group-hover:scale-110"
             }`}
           />
         </div>
