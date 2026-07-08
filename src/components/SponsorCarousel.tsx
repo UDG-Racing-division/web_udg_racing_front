@@ -86,7 +86,7 @@ export function SponsorCarousel({ sponsors }: SponsorCarouselProps) {
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
                   >
-                    <div className="w-80 h-48 flex items-center justify-center p-8 bg-gray-300/80 border border-gray-400/50 group-hover:border-[var(--color-udg-blue)] transition-all duration-300 rounded-xl shadow-sm">
+                    <div className="w-80 h-48 flex items-center justify-center p-8 border border-transparent group-hover:border-[var(--color-udg-blue)] transition-all duration-300 rounded-xl">
                       <img
                         src={sponsor.logo}
                         alt={sponsor.name}
