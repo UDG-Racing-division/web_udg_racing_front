@@ -74,7 +74,7 @@ export function FAQSection() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                   >
-                    <div className="p-6 pt-0 text-[var(--theme-text-body)] leading-relaxed border-t border-[var(--theme-border)]">
+                    <div className="px-6 pt-4 pb-6 text-[var(--theme-text-body)] leading-relaxed border-t border-[var(--theme-border)]">
                       {item.answer}
                     </div>
                   </motion.div>
