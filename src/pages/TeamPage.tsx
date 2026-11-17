@@ -55,13 +55,21 @@ function MemberCard({ member, index }: { member: TeamMember; index: number }) {
 
 export function TeamPage() {
   const { t, translate, language } = useLanguage();
-  const [data, setData] = useState<HomeData | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState<HomeData | null>(
+    () => apiService.peekHomeData(language) ?? null
+  );
+  const [loading, setLoading] = useState(() => !apiService.peekHomeData(language));
   const aboutRef = useRef(null);
   const isAboutInView = useInView(aboutRef, { once: false, margin: "-100px" });
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    const cached = apiService.peekHomeData(language);
+    if (cached) {
+      setData(cached);
+      setLoading(false);
+      return;
+    }
     const fetchData = async () => {
       try {
         setLoading(true);
