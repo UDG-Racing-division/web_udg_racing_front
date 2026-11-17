@@ -87,12 +87,26 @@ function NewsGrid({
 
 export function NewsPage() {
   const { language, t } = useLanguage();
-  const [news, setNews] = useState<NewsItem[]>([]);
-  const [settings, setSettings] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
+  const [news, setNews] = useState<NewsItem[]>(
+    () => apiService.peekNews(language)?.data ?? []
+  );
+  const [settings, setSettings] = useState<any>(
+    () => apiService.peekHomeData(language)?.settings ?? null
+  );
+  const [loading, setLoading] = useState(
+    () => !(apiService.peekHomeData(language) && apiService.peekNews(language))
+  );
   const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
 
   useEffect(() => {
+    const cachedHome = apiService.peekHomeData(language);
+    const cachedNews = apiService.peekNews(language);
+    if (cachedHome && cachedNews) {
+      setSettings(cachedHome.settings);
+      setNews(cachedNews.data);
+      setLoading(false);
+      return;
+    }
     const fetchData = async () => {
       try {
         setLoading(true);

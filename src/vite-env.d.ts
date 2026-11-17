@@ -1,8 +1,8 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
+  // VITE_* values are inlined into the client bundle: never put secrets here
   readonly VITE_API_URL: string;
-  readonly VITE_JWT_TOKEN?: string;
 }
 
 interface ImportMeta {

@@ -14,10 +14,18 @@ import { FAQSection } from "../components/FAQSection";
 
 export function HomePage() {
   const { language, t } = useLanguage();
-  const [data, setData] = useState<HomeData | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState<HomeData | null>(
+    () => apiService.peekHomeData(language) ?? null
+  );
+  const [loading, setLoading] = useState(() => !apiService.peekHomeData(language));
 
   useEffect(() => {
+    const cached = apiService.peekHomeData(language);
+    if (cached) {
+      setData(cached);
+      setLoading(false);
+      return;
+    }
     const fetchData = async () => {
       try {
         setLoading(true);
